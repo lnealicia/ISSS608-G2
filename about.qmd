@@ -1,0 +1,13 @@
+---
+title: "About"
+---
+
+Hello, we are GROUP 2!
+
+You can find our personal webpages below:
+
+[Alicia](https://lnealicia-isss608.netlify.app/)
+
+[Keke](https://isss608keke.netlify.app/)
+
+[YouTing](https://isss608ytquek.netlify.app/)
