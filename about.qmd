@@ -1,5 +1,7 @@
 ---
 title: "About"
+date: "20 May 2024"
+date-modified: "last-modified"
 ---
 
 Hello, we are GROUP 2!
