@@ -62,13 +62,15 @@ The project will focus on developing visual analytics tools using R to analyze a
 
     -   Example: Network diagrams highlighting new connections and changes in existing relationships.
 
+    -   Example: Usage of widyr package to 'casts' a tidy dataset into a wide matrix before performing a correlation operation on it.
+
 3.  **Influence Dynamics:**
 
     -   Develop a visual approach to examine how the influence of a company changes over time.
 
     -   Infer ownership or influence within the network.
 
-    -   Example: Influence maps showing the rise and fall of key players in the industry.
+    -   Example: Influence maps showing the rise and fall of key players in the industry. This is done through the usage of **tidygraph to create nodes and edges data appropriate for map visualisation
 
 4.  **Impact of SouthSeafood Express Corp’s Closure:**
 
@@ -86,7 +88,7 @@ The project will focus on developing visual analytics tools using R to analyze a
 
     -   Use company records, ownership, shareholder information, and transaction data.
 
-    -   Ensure data is cleaned and structured for analysis.
+    -   Ensure data is cleaned and structured for further analysis.
 
 -   **Visualization Tools:**
 
