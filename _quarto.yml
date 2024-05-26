@@ -10,6 +10,11 @@ website:
         menu:
           - text: "Proposal"
             href: "Proposal/Proposal.html"
+      - icon: book-half
+        text: "Meeting Minutes"
+        menu:
+          - text: "Meeting Minutes 1"
+            href: "MeetingMinutes1.html"
 
     right:
       - href: about.qmd
@@ -17,7 +22,7 @@ website:
     
     tools:       
     - icon: github         
-      href: https://github.com/lnealicia/
+      href: https://github.com/lnealicia/ISSS608-G2
 
 format:
   html:

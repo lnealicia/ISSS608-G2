@@ -1,0 +1,170 @@
+---
+title: "Meeting Minutes 1"
+author: "Group 2"
+date: "May 17, 2024"
+date-modified: last-modified
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# Meeting Minutes 1
+
+Date: 17 May 2024
+
+Attendance: All present
+
+Proposed Project Timeline:
+
+**Week 1: Data Wrangling and Initial Visualizations**
+
+**May 17 (Friday) - May 19 (Sunday): Initial Setup and Data Wrangling**
+
+1.  **Alicia**
+    -   Continue working on cleaning and wrangling the data, focusing on date & time columns using Lubridate.
+    -   Ensure all date columns are properly formatted and handle any remaining missing values
+
+```{=html}
+<!-- -->
+```
+2.  **KeKe**
+
+    -   Validate the integrity of the data after wrangling.
+
+    -   Identify key variables and metrics needed for the visualizations (e.g., ownership changes, transaction types).
+
+3.  **YouTing**
+
+    -   Set up the Quarto website structure if not already done.
+
+    -   Prepare a detailed project plan and task breakdown for the group.
+
+**May 20 (Monday) - May 22 (Wednesday): Initial Visualizations**
+
+1.  **Alicia**
+
+    -   Create initial visualizations using ggplot2 or other relevant R visualization libraries.
+
+    -   Focus on time series plots to show changes in corporate structures and ownership over time.
+
+2.  **KeKe**
+
+    -   Develop network graphs to visualize relationships between entities using packages like **igraph** or **ggraph**.
+
+    -   Highlight key individuals and their connections to companies.
+
+3.  **YouTing**
+
+    -   Integrate the initial visualizations into the Quarto website.
+
+    -   Start drafting the narrative for the visualizations, explaining what each one shows.
+
+**Week 2: Advanced Visualizations and Analysis**
+
+**May 23 (Thursday) - May 26 (Sunday): Advanced Visualizations**
+
+1.  **Alicia**
+
+    -   Enhance the visualizations by adding interactivity using Shiny
+
+    -   Create additional visualizations to highlight atypical business transactions and inferences about influence.
+
+2.  **KeKe**
+
+    -   Conduct a detailed analysis of the SouthSeafood Express Corp network.
+
+    -   Visualize changes in this network and identify companies that benefited from their legal troubles.
+
+3.  **YouTing**
+
+    -   Gather feedback from team members and iterate on the visualizations.
+
+    -   Update the Quarto website with new visualizations and findings.
+
+**May 27 (Monday) - May 30 (Thursday): Analysis and Inference**
+
+1.  **Alicia**
+
+    -   Perform in-depth analysis to infer motivations behind business activities and transactions.
+
+    -   Document findings and prepare visual evidence.
+
+2.  **Keke**
+
+    -   Continue exploring suspicious transactions and potential illegal activities.
+
+    -   Prepare visualizations and analysis to support these findings.
+
+3.  **YouTing**
+
+    -   Integrate advanced visualizations and analyses into the website.
+
+    -   Ensure the website is user-friendly and all visualizations are correctly embedded.
+
+**Week 3: Finalization and Presentation Preparation**
+
+**May 31 (Friday) - June 4 (Tuesday): Final Touches**
+
+1.  **Alicia**
+
+    -   Finalize all visualizations and ensure they are polished and accurate.
+
+    -   Double-check the data integrity and visualization accuracy.
+
+2.  **Keke**
+
+    -   Conduct a thorough review of all analyses and ensure consistency.
+
+    -   Help Person A with any final touches on visualizations.
+
+3.  **YouTing**
+
+    -   Finalize the Quarto website, ensuring all sections are complete and the content flows logically.
+
+    -   Prepare the written responses for each question in the assignment, ensuring they are concise and supported by visual evidence.
+
+**June 5 (Wednesday) - June 8 (Saturday): Poster and Presentation Preparation**
+
+1.  **Alicia**
+
+    -   Design the poster using tools like Canva or PowerPoint.
+
+    -   Ensure the poster includes key visualizations, findings, and concise explanations.
+
+2.  **KeKe**
+
+    -   Assist in designing the poster.
+
+    -   Prepare talking points and scripts for the presentation.
+
+3.  **YouTing**
+
+    -   Oversee the poster design and ensure it aligns with the Quarto website
+
+    -   Practice the presentation with the group, ensuring each member knows their role.
+
+**June 9 (Sunday) - June 12 (Wednesday): Final Review and Rehearsal**
+
+1.  **All Team Members**
+
+    -   Conduct a full review of the website, poster, and presentation.
+
+    -   Rehearse the presentation multiple times to ensure smooth delivery.
+
+    -   Make any necessary final adjustments based on rehearsals.
+
+**June 13 (Thursday) - June 14 (Friday): Buffer Days**
+
+1.  **All Team Members**
+
+    -   Use these days as buffer time for any unexpected delays or additional fine-tuning.
+
+    -   Ensure everything is ready for submission by the deadline.
+
+**June 15 (Saturday): Submission Day**
+
+1.  **All Team Members**
+
+    -   Submit the final Quarto website, poster, and any other required materials.

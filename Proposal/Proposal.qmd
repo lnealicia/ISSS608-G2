@@ -1,0 +1,137 @@
+---
+title: "Proposal"
+author: "Group 2"
+date: "May 26, 2024"
+date-modified: last-modified
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# **Project Proposal: Visual Analytics of Corporate Structures and Influence in Oceanus's Commercial Fishing Industry**
+
+## **Project Topic**
+
+The project will focus on developing visual analytics tools using R to analyze and visualize changes in corporate structures and influence within the commercial fishing industry in Oceanus. The goal is to provide FishEye International with insights into the dynamic business environment, especially in light of the recent illegal fishing activities by SouthSeafood Express Corp.
+
+## **Project Scope**
+
+1.  **Visualization of Temporal Corporate Structures:**
+
+    -   Develop visual tools to highlight changes in corporate structures over time.
+
+    -   Focus on shareholder and ownership relationships.
+
+    -   Track the influence of key individuals and entities within the business network.
+
+2.  **Analysis of Business Transactions:**
+
+    -   Identify and visualize typical and atypical business transactions such as mergers, acquisitions, and investments.
+
+    -   Infer motivations behind changes in business activities.
+
+    -   Highlight how these transactions impact corporate influence and market dynamics.
+
+3.  **Impact of SouthSeafood Express Corp’s Legal Troubles:**
+
+    -   Visualize the network associated with SouthSeafood Express Corp.
+
+    -   Analyze changes in this network following the corporation's closure due to illegal activities.
+
+    -   Identify companies that benefited from SouthSeafood Express Corp’s downfall.
+
+    -   Detect other suspicious transactions potentially related to illegal fishing.
+
+## **Tasks and Questions**
+
+1.  **Temporal Patterns in Corporate Structures:**
+
+    -   Create visualizations that illustrate changes in corporate structures over time.
+
+    -   Highlight the most active individuals and businesses within the network.
+
+    -   Example: Timeline visualizations showing changes in ownership and shareholder relationships.
+
+2.  **Typical and Atypical Business Transactions:**
+
+    -   Use visual analytics to display examples of mergers, acquisitions, and other significant transactions.
+
+    -   Infer motivations behind these transactions based on visual patterns.
+
+    -   Example: Network diagrams highlighting new connections and changes in existing relationships.
+
+3.  **Influence Dynamics:**
+
+    -   Develop a visual approach to examine how the influence of a company changes over time.
+
+    -   Infer ownership or influence within the network.
+
+    -   Example: Influence maps showing the rise and fall of key players in the industry.
+
+4.  **Impact of SouthSeafood Express Corp’s Closure:**
+
+    -   Visualize the business network of SouthSeafood Express Corp before and after its closure.
+
+    -   Identify companies that gained from its legal troubles.
+
+    -   Detect suspicious transactions that might indicate further illegal activities.
+
+    -   Example: Comparative network analysis showing shifts in influence and ownership.
+
+## **Methodology**
+
+-   **Data Collection:**
+
+    -   Use company records, ownership, shareholder information, and transaction data.
+
+    -   Ensure data is cleaned and structured for analysis.
+
+-   **Visualization Tools:**
+
+    -   Utilize R packages such as **`ggplot2`** for general plotting and **`ggraph`** for network visualization.
+
+    -   Employ **`igraph`** for network analysis.
+
+    -   Use **`tidyverse`** for data manipulation and **`lubridate`** for handling dates and times.
+
+-   **Analysis Techniques:**
+
+    -   Apply network analysis to detect influential individuals and companies using **`igraph`**.
+
+    -   Use clustering and pattern recognition with **`dplyr`** and **`tidyr`** to identify typical and atypical transactions.
+
+    -   Leverage temporal analysis to track changes and trends over time with **`lubridate`**.
+
+## **R Packages to Use**
+
+1.  **Data Manipulation:**
+
+    -   **`dplyr`**: For data manipulation.
+
+    -   **`tidyr`**: For tidying data and separating columns.
+
+    -   **`readr`**: For reading data files.
+
+    -   **`lubridate`**: For date and time manipulation.
+
+2.  **Visualization:**
+
+    -   **`ggplot2`**: For creating static visualizations.
+
+    -   **`ggraph`**: For creating network visualizations.
+
+    -   **`plotly`**: For creating interactive visualizations.
+
+    -   **`shiny`**: For developing interactive web applications.
+
+3.  **Network Analysis:**
+
+    -   **`igraph`**: For creating and analyzing network graphs.
+
+4.  **Text Mining (if needed):**
+
+    -   **`tidytext`**: For text mining and tokenization.
+
+    -   **`tm`**: For text mining.
