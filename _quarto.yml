@@ -14,7 +14,7 @@ website:
         text: "Meeting Minutes"
         menu:
           - text: "Meeting Minutes 1"
-            href: "MeetingMinutes1.html"
+            href: "MeetingMinutes/MeetingMinutes1.html"
 
     right:
       - href: about.qmd

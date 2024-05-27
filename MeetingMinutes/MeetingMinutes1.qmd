@@ -26,9 +26,8 @@ Proposed Project Timeline:
     -   Continue working on cleaning and wrangling the data, focusing on date & time columns using Lubridate.
     -   Ensure all date columns are properly formatted and handle any remaining missing values
 
-```{=html}
 <!-- -->
-```
+
 2.  **KeKe**
 
     -   Validate the integrity of the data after wrangling.
