@@ -15,6 +15,12 @@ website:
         menu:
           - text: "Meeting Minutes 1"
             href: "MeetingMinutes/MeetingMinutes1.html"
+      - text: "Shiny App"
+        href: "ShinyApp.html"
+      - text: "Poster"
+        href: "Poster.html"
+
+      
 
     right:
       - href: about.qmd

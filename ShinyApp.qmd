@@ -1,0 +1,13 @@
+---
+title: "Shiny App"
+date: "9 June 2024"
+date-modified: "last-modified"
+---
+
+# Welcome to our R Shiny App
+
+![](images/clipboard-4158208942.png){width="318"}
+
+The R Shiny application aims to help user explore the data provided by MC3 of the VAST Challenge 2024.
+
+The Shiny App can be accessed on Shiny.io here.
