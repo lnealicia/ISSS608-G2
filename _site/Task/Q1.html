@@ -9,7 +9,7 @@
 <meta name="author" content="Alicia Loh">
 <meta name="dcterms.date" content="2024-05-10">
 
-<title>ISSS608 - Take-home Exercise 3 - Vast Challenge 2024</title>
+<title>ISSS608 - Vast Challenge 2024: Question 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -201,13 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-source" id="toc-the-source" class="nav-link active" data-scroll-target="#the-source"><strong>The Source</strong></a></li>
-  <li><a href="#challenge-overview" id="toc-challenge-overview" class="nav-link" data-scroll-target="#challenge-overview">Challenge Overview</a></li>
-  <li><a href="#the-task" id="toc-the-task" class="nav-link" data-scroll-target="#the-task"><strong>The Task</strong></a>
-  <ul class="collapse">
-  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
-  <li><a href="#tasks-and-questions" id="toc-tasks-and-questions" class="nav-link" data-scroll-target="#tasks-and-questions">Tasks and Questions:</a></li>
-  </ul></li>
+  <li><a href="#task" id="toc-task" class="nav-link active" data-scroll-target="#task">Task</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
   <ul class="collapse">
   <li><a href="#installing-and-loading-the-required-libraries" id="toc-installing-and-loading-the-required-libraries" class="nav-link" data-scroll-target="#installing-and-loading-the-required-libraries">Installing and loading the required libraries</a></li>
@@ -254,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Take-home Exercise 3 - Vast Challenge 2024</h1>
+<h1 class="title">Vast Challenge 2024: Question 1</h1>
 </div>
 
 
@@ -278,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 9, 2024</p>
+      <p class="date-modified">June 11, 2024</p>
     </div>
   </div>
     
@@ -287,35 +281,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="the-source" class="level1">
-<h1><strong>The Source</strong></h1>
-<p>The task is taken from the <a href="https://vast-challenge.github.io/2024/">VAST Challenge 2024</a>. Questions from <a href="https://vast-challenge.github.io/2024/MC3.html">Mini Case 3: Temporal Analysis</a> will be completed.</p>
-</section>
-<section id="challenge-overview" class="level1">
-<h1>Challenge Overview</h1>
-<p><img src="data/Oceanus Information/Oceanus Location.png" class="img-fluid" width="288"></p>
-<p><img src="data/Oceanus Information/Oceanus Geography.png" class="img-fluid" width="308"></p>
-<p>Welcome to Oceanus, an island nation with a healthy market for commercial fishing. Most companies in the region are united in following regulations and implementing sustainable fishing practices. But there are a few companies who are willing to cross ethical lines to increase their catch and their profits. Luckily, FishEye International maintains a watchful eye on fishing data. Their dedicated analysts have been processing data from various sources into a knowledge graph that they call CatchNet: the Oceanus Knowledge Graph.</p>
-</section>
-<section id="the-task" class="level1">
-<h1><strong>The Task</strong></h1>
-<p><img src="images/clipboard-587959097.png" class="img-fluid" width="320"></p>
-<p>Mini-challenge 3 concerns visualizing changes in business relationships within the commercial fishing industry. FishEye wants to understand how companies react to the closure of a competitor caught fishing illegally and how these changes affect influence networks. Design visualizations to show these changes over time and identify companies that may benefit from illegal fishing</p>
-<p>Apply appropriate visual analytics methods to help FishEye, a non-profit organization that focuses on illegal fishing, to better identify bias, track behavior changes, and infer temporal patterns from the knowledge graphs prepared by their data analysts.</p>
-<p>This take home exercise is done in conjunction with the group project. My group members are <a href="https://isss608keke.netlify.app/">Keke</a> and <a href="https://isss608ytquek.netlify.app/">Quek You Ting</a>.</p>
-<section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>The business community in Oceanus is dynamic with new startups, mergers, acquisitions, and investments. FishEye International closely watches business records to keep tabs on commercial fishing operators. FishEye’s goal is to identify and prevent illegal fishing in the region’s sensitive marine ecosystem. Analysts are working with company records that show ownership, shareholders, transactions, and information about the typical products and services of each entity. FishEye’s analysts have a hybrid automated/manual process to transform the data into CatchNet: the Oceanus Knowledge Graph.</p>
-<p>In the past year, Oceanus’s commercial fishing business community was rocked by the news that SouthSeafood Express Corp was caught fishing illegally. FishEye wants to understand temporal patterns and infer what may be happening in Oceanus’s fishing marketplace because of SouthSeafood Express Corp’s illegal behavior and eventual closure. The competitive nature of Oceanus’s fishing market may cause some businesses to react aggressively to capture SouthSeafood Express Corp’s business while other reactions may come from the awareness that illegal fishing does not go undetected and unpunished.</p>
-</section>
-<section id="tasks-and-questions" class="level2">
-<h2 class="anchored" data-anchor-id="tasks-and-questions">Tasks and Questions:</h2>
+<section id="task" class="level1">
+<h1>Task</h1>
 <p>A key element in stopping illegal fishing is holding the people who own nefarious companies accountable. Thus, FishEye is keenly interested in developing visualization tools that work with CatchNet to identify the people who hold influence over business networks. That is especially difficult with varied and changing shareholder and ownership relationships.</p>
 <ol type="1">
 <li>FishEye analysts want to better visualize changes in corporate structures over time. Create a visual analytics approach that analysts can use to highlight temporal patterns and changes in corporate structures. Examine the most active people and businesses using visual analytics.</li>
 </ol>
 <p>Note: the VAST challenge is focused on visual analytics and graphical figures should be included with your response to each question. Please include a reasonable number of figures for each question (no more than about 6) and keep written responses as brief as possible (around 250 words per question). Participants are encouraged to new visual representations rather than relying on traditional or existing approaches.</p>
-</section>
 </section>
 <section id="getting-started" class="level1">
 <h1>Getting Started</h1>

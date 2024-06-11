@@ -1,5 +1,5 @@
 ---
-title: "Vast Challenge 2024: QUestion 1"
+title: "Vast Challenge 2024: Question 1"
 author: "Alicia Loh"
 date: "May 10, 2024"
 date-modified: last-modified
