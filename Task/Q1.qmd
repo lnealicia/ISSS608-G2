@@ -1,5 +1,5 @@
 ---
-title: "Take-home Exercise 3 - Vast Challenge 2024"
+title: "Vast Challenge 2024: QUestion 1"
 author: "Alicia Loh"
 date: "May 10, 2024"
 date-modified: last-modified
@@ -10,35 +10,7 @@ execute:
   freeze: true
 ---
 
-# **The Source**
-
-The task is taken from the [VAST Challenge 2024](https://vast-challenge.github.io/2024/). Questions from [Mini Case 3: Temporal Analysis](https://vast-challenge.github.io/2024/MC3.html) will be completed.
-
-# Challenge Overview
-
-![](data/Oceanus%20Information/Oceanus%20Location.png){width="288"}
-
-![](data/Oceanus%20Information/Oceanus%20Geography.png){width="308"}
-
-Welcome to Oceanus, an island nation with a healthy market for commercial fishing. Most companies in the region are united in following regulations and implementing sustainable fishing practices. But there are a few companies who are willing to cross ethical lines to increase their catch and their profits. Luckily, FishEye International maintains a watchful eye on fishing data. Their dedicated analysts have been processing data from various sources into a knowledge graph that they call CatchNet: the Oceanus Knowledge Graph.
-
-# **The Task**
-
-![](images/clipboard-587959097.png){width="320"}
-
-Mini-challenge 3 concerns visualizing changes in business relationships within the commercial fishing industry. FishEye wants to understand how companies react to the closure of a competitor caught fishing illegally and how these changes affect influence networks. Design visualizations to show these changes over time and identify companies that may benefit from illegal fishing
-
-Apply appropriate visual analytics methods to help FishEye, a non-profit organization that focuses on illegal fishing, to better identify bias, track behavior changes, and infer temporal patterns from the knowledge graphs prepared by their data analysts.
-
-This take home exercise is done in conjunction with the group project. My group members are [Keke](https://isss608keke.netlify.app/) and [Quek You Ting](https://isss608ytquek.netlify.app/).
-
-## Background
-
-The business community in Oceanus is dynamic with new startups, mergers, acquisitions, and investments. FishEye International closely watches business records to keep tabs on commercial fishing operators. FishEye’s goal is to identify and prevent illegal fishing in the region’s sensitive marine ecosystem. Analysts are working with company records that show ownership, shareholders, transactions, and information about the typical products and services of each entity. FishEye’s analysts have a hybrid automated/manual process to transform the data into CatchNet: the Oceanus Knowledge Graph.
-
-In the past year, Oceanus’s commercial fishing business community was rocked by the news that SouthSeafood Express Corp was caught fishing illegally. FishEye wants to understand temporal patterns and infer what may be happening in Oceanus’s fishing marketplace because of SouthSeafood Express Corp’s illegal behavior and eventual closure. The competitive nature of Oceanus’s fishing market may cause some businesses to react aggressively to capture SouthSeafood Express Corp’s business while other reactions may come from the awareness that illegal fishing does not go undetected and unpunished.
-
-## Tasks and Questions:
+# Task
 
 A key element in stopping illegal fishing is holding the people who own nefarious companies accountable. Thus, FishEye is keenly interested in developing visualization tools that work with CatchNet to identify the people who hold influence over business networks. That is especially difficult with varied and changing shareholder and ownership relationships.
 

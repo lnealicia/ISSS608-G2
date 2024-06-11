@@ -6,6 +6,8 @@ date-modified: "last-modified"
 
 Hello, we are GROUP 2!
 
+![](images/clipboard-663624080.png){width="389"}
+
 You can find our personal webpages below:
 
 [Alicia](https://lnealicia-isss608.netlify.app/)

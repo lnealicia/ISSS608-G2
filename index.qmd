@@ -3,4 +3,8 @@ title: "Visual Analytics and Applications - Group 2"
 toc: false
 ---
 
-Welcome to ISSS608 Visual Analytics and Applications - Group 2 homepage. In this website, you will find our project submissions.
+Welcome to ISSS608 Visual Analytics and Applications - Group 2 homepage.
+
+![](images/Untitled%20(1920%20x%201080%20px).png)
+
+**In this website, you will find our project submission for [VAST Challenge 2024 MC3](https://vast-challenge.github.io/2024/MC3.html).**
