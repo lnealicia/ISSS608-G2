@@ -1,0 +1,59 @@
+---
+title: "Meeting Minutes 1"
+author: "Group 2"
+date: "June 11, 2024"
+date-modified: last-modified
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# Meeting Minutes 1
+
+Date: 11 June 2024
+
+Attendance: All present
+
+Proposed Project Timeline:
+
+**Current Status:**
+
+Alicia: Completed Question 1
+
+YouTing: Completed Question 2 & 3
+
+Keke: Completed Question 3 & 4
+
+**June 11 (Tuesday) - June 8 (Saturday): Compile Questions into Website**
+
+1.  **Alicia**
+
+    -   Explore possible Shiny app avenues
+
+2.  **KeKe**
+
+    -   Check formatting and layout
+
+3.  **YouTing**
+
+    -   In charge of compilation
+
+**June 16 (Sunday) - June 22 (Wednesday): Shiny App**
+
+1.  **Alicia & KeKe**
+
+    -   Work on Shiny App
+
+2.  **YouTing**
+
+    -   Work on Quarto
+
+**Deadlines:**
+
+26 June - Poster Due
+
+29 June - Project Submission (website, Shiny app, report)
+
+29 June - Poster Presentation
