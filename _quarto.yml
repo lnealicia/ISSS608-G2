@@ -10,14 +10,7 @@ website:
         menu:
           - text: "Proposal"
             href: "Proposal/Proposal.html"
-      - icon: book-half
-        text: "Meeting Minutes"
-        menu:
-          - text: "Meeting Minutes 1"
-            href: "MeetingMinutes/MeetingMinutes1.html"
-          - text: "Meeting Minutes 2"
-            href: "MeetingMinutes/MeetingMinutes2.html"
-      - text: "Task"
+      - text: "Task Questions"
         menu:
           - text: "Q1"
             href: "Task/Q1.html"
@@ -27,6 +20,15 @@ website:
             href: "Task/Q3.html"
           - text: "Q4"
             href: "Task/Q4.html"
+      - icon: book-half
+        text: "Meeting Minutes"
+        menu:
+          - text: "Meeting Minutes 1"
+            href: "MeetingMinutes/MeetingMinutes1.html"
+          - text: "Meeting Minutes 2"
+            href: "MeetingMinutes/MeetingMinutes2.html"
+          - text: "Meeting Minutes 3"
+            href: "MeetingMinutes/MeetingMinutes3.html"
       - text: "Shiny App"
         href: "ShinyApp.html"
       - text: "Poster"
