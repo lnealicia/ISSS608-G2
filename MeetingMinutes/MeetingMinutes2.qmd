@@ -10,7 +10,7 @@ execute:
   freeze: true
 ---
 
-# Meeting Minutes 1
+# Meeting Minutes 2
 
 Date: 11 June 2024
 
