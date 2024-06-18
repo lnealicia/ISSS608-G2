@@ -12,6 +12,10 @@ website:
             href: "Proposal/Proposal.html"
       - text: "Task Questions"
         menu:
+          - text: "Task Information"
+            href: "Task/Info.html"
+          - text: "Data Preprocessing"
+            href: "Task/DataPreprocessing.html"
           - text: "Q1"
             href: "Task/Q1.html"
           - text: "Q2"
