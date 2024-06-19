@@ -22,31 +22,69 @@ Proposed Project Timeline:
 
 Codes have been combined.
 
-YouTeng will work on Shiny App first, while Alicia and Keke complete their exams on 24 June Monday.
+YouTing will start first, while Alicia and Keke complete their exams on 24 June Monday.
 
-**June 11 (Tuesday) - June 8 (Saturday): Compile Questions into Website**
+**Agenda:**
 
-1.  **Alicia**
+1.  Discuss the overview and storytelling approach for the project.
 
-    -   Explore possible Shiny app avenues
+2.  Outline the project sections and specific questions to address.
 
-2.  **KeKe**
+**Discussion Points:**
 
-    -   Check formatting and layout
+**Overview and Storytelling:**
 
-3.  **YouTing**
+-   The project will be structured to clearly narrate the impact and findings from our analysis.
 
-    -   In charge of compilation
+-   Key sections identified for the report: preprocessing, solving four key questions, analysis and conclusion.
 
-**June 16 (Sunday) - June 22 (Wednesday): Shiny App**
+**Sections Breakdown:**
 
-1.  **Alicia & KeKe**
+**1. Preprocessing:**
 
-    -   Work on Shiny App
+-   Discussed the steps necessary for cleaning and organizing the data to ensure accurate analysis.
 
-2.  **YouTing**
+**2. Solving Four Questions:**
 
-    -   Work on Quarto
+-   **Q1. Corporate Structure, Active Influences:**
+
+    -   Objective: Identify all active nodes within the corporate structure.
+
+-   **Q2. Atypical/Typical Transactions (B2B):**
+
+    -   Objective: Determine atypical nodes and edges by analyzing business-to-business transactions.
+
+-   **Q3. Network / Ownership Analysis (person2person):**
+
+    -   Objective: Identify the most influential person nodes within the network.
+
+-   **Q4. Impact of SouthSeafood Corp Closure:**
+
+    -   Objective: Analyze the impact of SouthSeafood Express Corp's closure, identifying potential accomplices, competitors, and other suspicious transactions.
+
+**3. Analysis:**
+
+-   Integrate conclusions from each question to uncover overlaps between the nodes of Q1 and Q4.
+
+-   Compare results from Q1-Q4 to identify individuals or entities that repeatedly appear, suggesting they may be suspicious and should be monitored closely.
+
+### Next Steps (19 June - 25 June)
+
+-   **Combine preprocessing code**: Integrate all preprocessing steps into a single file (`preprocessing.qmd`) and standardize all variable names.
+
+-   **Create plots for each question**: Use ShinyApp to generate visualizations for each question and annotate with corresponding findings.
+
+-   **Integrate findings**: Synthesize results and draw comprehensive conclusions from overlapping data.
+
+### Action Items:
+
+-   **Youting**: Lead preprocessing efforts, ensuring data is clean, organized, and variables are standardized. And plot for Q2.
+
+-   **Alicia**: Plot results for Q1, analyze, draw conclusions and design poster.
+
+-   **Keke**: Plot results for Q3 and Q4, analyze, and draw conclusions.
+
+-   **Schedule next meeting**: Plan a follow-up meeting on 25 June to review initial findings and integrate results for the analysis section.
 
 **Deadlines:**
 
