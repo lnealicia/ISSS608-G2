@@ -1,13 +1,5 @@
 ---
-title: "Vast Challenge 2024: Question 1"
-author: "Alicia Loh"
-date: "May 10, 2024"
-date-modified: last-modified
-execute: 
-  eval: true
-  echo: true
-  warning: false
-  freeze: true
+title: "Main solution"
 ---
 
 # Getting Started
@@ -1060,4 +1052,370 @@ The earliest link: Lane Group has been the shareholder of Howell LLC since 2020.
 The most recent link: GvardeyskAmerica Shipping Plc is the shareholder of ArawakFish Cargo Ges.m.b.H.. since 2034.
 :::
 
-## 
+## Finding atypical Business Relationships
+```{r}
+# Creating the graph object
+mc3_graph1 <- tbl_graph(nodes = mc3_nodes1, edges = mc3_edges, directed = FALSE) %>%
+  mutate(betweenness_centrality = centrality_betweenness(),
+         closeness_centrality = centrality_closeness())
+  theme_graph()
+```
+```{r}
+# Identify top nodes by betweenness centrality
+top_nodes <- mc3_graph1 %>% 
+  as_tibble() %>% 
+  filter(betweenness_centrality >= 3000000)
+```
+
+```{r}
+head(top_nodes, n = 50)
+```
+
+```{r}
+# Filter edges for atypical business transactions
+atypical_edges <- mc3_edges %>%
+  filter(type %in% c("Shareholdership", "WorksFor", "BeneficialOwnership", "FamilyRelationship"))
+
+# Extract nodes that are part of these transactions
+atypical_nodes <- mc3_nodes %>%
+  filter(id %in% unique(c(atypical_edges$source, atypical_edges$target)))
+
+# Create the graph object with filtered data
+atypical_graph <- tbl_graph(nodes = atypical_nodes, edges = atypical_edges, directed = FALSE) %>%
+  mutate(betweenness_centrality = centrality_betweenness(),
+         closeness_centrality = centrality_closeness())
+
+# Define higher centrality thresholds for more filtering
+betweenness_threshold <- quantile(atypical_graph %>% activate(nodes) %>% pull(betweenness_centrality), 0.995)
+closeness_threshold <- quantile(atypical_graph %>% activate(nodes) %>% pull(closeness_centrality), 0.995)
+
+# Filter nodes based on higher centrality thresholds
+filtered_graph <- atypical_graph %>%
+  activate(nodes) %>%
+  filter(betweenness_centrality >= betweenness_threshold | closeness_centrality >= closeness_threshold) %>%
+  activate(edges) %>%
+  filter(edge_is_between())
+
+# Display the refined network graph
+ggraph(filtered_graph, layout = "fr") + # Using Fruchterman-Reingold layout
+  geom_edge_link(aes(edge_alpha = 0.8, edge_width = 0.8)) + # Customize edge appearance
+  geom_node_point(aes(size = betweenness_centrality, color = closeness_centrality)) + # Customize node appearance
+  scale_color_viridis_c() + # Use viridis color scale
+  theme_void() + # Use a void theme
+  labs(title = "Refined Network Graph of Atypical Business Transactions",
+       subtitle = "Nodes colored by closeness centrality and sized by betweenness centrality",
+       caption = "Data Source: mc3.json") # Add titles and captions
+
+```
+
+### Step 2 filtering out false positives with a centrality threshold
+
+```{r}
+# Define higher centrality thresholds for more filtering
+betweenness_threshold <- quantile(atypical_graph %>% activate(nodes) %>% pull(betweenness_centrality), 0.995)
+closeness_threshold <- quantile(atypical_graph %>% activate(nodes) %>% pull(closeness_centrality), 0.995)
+
+# Filter nodes based on higher centrality thresholds
+filtered_graph <- atypical_graph %>%
+  activate(nodes) %>%
+  filter(betweenness_centrality >= betweenness_threshold | closeness_centrality >= closeness_threshold) %>%
+  activate(edges) %>%
+  filter(edge_is_between())
+
+# Verify the filtered graph object
+print(filtered_graph)
+
+# Display the refined network graph
+ggraph(filtered_graph, layout = "fr") + # Using Fruchterman-Reingold layout
+  geom_edge_link(aes(edge_alpha = 0.8, edge_width = 0.8)) + # Customize edge appearance
+  geom_node_point(aes(size = betweenness_centrality, color = closeness_centrality)) + # Customize node appearance
+  scale_color_viridis_c() + # Use viridis color scale
+  theme_void() + # Use a void theme
+  labs(title = "Refined Network Graph of Atypical Business Transactions",
+       subtitle = "Nodes colored by closeness centrality and sized by betweenness centrality",
+       caption = "Data Source: mc3.json") # Add titles and captions
+
+
+```
+## Refining visualisation
+
+We first will need to sift out edges with some form of ownership or working relationship. Following that, the centrality threshold will need to be defined so that most false positives are being filtered out through it and then finally using *slice* to only take the top 50 edges.
+
+
+### Step 3, take only the top 50 links
+
+```{r}
+# Get top 50 links based on the sum of betweenness centrality of source and target nodes
+top_50_links <- filtered_graph %>%
+  activate(edges) %>%
+  mutate(edge_betweenness_sum = .N()$betweenness_centrality[from] + .N()$betweenness_centrality[to]) %>%
+  arrange(desc(edge_betweenness_sum)) %>%
+  slice(1:50)
+
+# Create a new graph object with the top 50 links
+top_50_graph <- tbl_graph(nodes = filtered_graph %>% activate(nodes), edges = top_50_links, directed = FALSE)
+
+# Identify the top nodes for labeling
+top_nodes <- top_50_graph %>%
+  activate(nodes) %>%
+  as_tibble() %>%
+  arrange(desc(betweenness_centrality)) %>%
+  slice(1:10)
+
+# Extract layout data for node positions
+graph_layout <- create_layout(top_50_graph, layout = "fr")
+
+# Display the refined network graph with top 50 links and node labels
+ggraph(graph_layout) + # Using precomputed layout
+  geom_edge_link(aes(edge_alpha = 0.8, edge_width = 0.8), color = "gray") + # Customize edge appearance
+  geom_node_point(aes(size = betweenness_centrality, color = closeness_centrality)) + # Customize node appearance
+  geom_node_text(data = graph_layout, aes(x = x, y = y, label = id), repel = TRUE, size = 3, check_overlap = TRUE) + # Add labels to top nodes
+  scale_color_viridis_c() + # Use viridis color scale
+  theme_void() + # Use a void theme
+  labs(title = "Top 50 Links in Atypical Business Transactions",
+       subtitle = "Nodes colored by closeness centrality and sized by betweenness centrality",
+       caption = "Data Source: mc3.json") # Add titles and captions
+```
+
+
+### **Interpretation**
+
+1.  **Node Size (Betweenness Centrality):**
+
+    -   Larger nodes represent entities with higher betweenness centrality. These are nodes that frequently act as intermediaries in the shortest paths between other nodes. They are crucial for the flow of information or transactions in the network.
+
+2.  **Node Color (Closeness Centrality):**
+
+    -   The color of the nodes indicates their closeness centrality. Closeness centrality measures how close a node is to all other nodes in the network. Nodes with higher closeness centrality (often lighter colors) can quickly interact with other nodes.
+
+3.  **Labeled Nodes:**
+
+    -   The labels represent the most central nodes based on betweenness centrality. These are key entities in the network, acting as significant intermediaries in business transactions.
+
+4.  **Node Distribution:**
+
+    -   The dense cluster of nodes in the center indicates a high level of interaction among these entities. Peripheral nodes might indicate entities that are less central but still part of significant transactions.
+
+### **Observations**
+
+-   **Highly Central Entities:**
+
+    -   Entities such as "Augustin Le Texier," "Sullivan and Sons," "Tullio Jacuzzi," and others labeled on the graph are highly central in terms of their ability to broker connections between other nodes.
+
+-   **Dense Core:**
+
+    -   The central area of the graph is densely packed with nodes, indicating a high degree of interconnection among many entities. This suggests a tightly-knit network where many transactions or interactions occur.
+
+-   **Peripheral Nodes:**
+
+    -   Nodes on the periphery, though smaller and less central, still play a role in the network. Their interactions may be with the core or other peripheral nodes.
+
+### **Potential Actions**
+
+1.  **Focus on Key Players:**
+
+    -   Entities with high betweenness and closeness centrality (large, brightly colored nodes) are critical for network connectivity. These entities might be key influencers or major players in business transactions.
+
+2.  **Investigate Clusters:**
+
+    -   The dense central cluster indicates a closely connected group of entities. Investigating these clusters can reveal sub-networks or communities within the larger network.
+
+### Cluster Investigation
+
+```{r}
+
+
+# Perform clustering on the graph
+clustered_graph <- mc3_graph1 %>%
+  mutate(cluster = as.factor(group_louvain()))
+
+# Calculate edge betweenness centrality for the entire graph
+edge_betweenness_vals <- edge_betweenness(clustered_graph)
+
+# Add edge betweenness centrality to the graph
+clustered_graph <- clustered_graph %>%
+  activate(edges) %>%
+  mutate(edge_betweenness = edge_betweenness_vals)
+
+# Highlight key nodes with betweenness centrality >= 3,000,000 and their clusters
+key_nodes_and_clusters <- clustered_graph %>%
+  activate(nodes) %>%
+  filter(betweenness_centrality >= 3000000) %>%
+  pull(cluster) %>%
+  unique()
+
+# Filter the graph to include only the key nodes and their clusters
+filtered_graph <- clustered_graph %>%
+  activate(nodes) %>%
+  filter(cluster %in% key_nodes_and_clusters)
+
+# Calculate edge betweenness sum for the filtered graph
+filtered_graph <- filtered_graph %>%
+  activate(edges) %>%
+  mutate(edge_betweenness_sum = .N()$betweenness_centrality[from] + .N()$betweenness_centrality[to])
+
+# Extract layout data for node positions
+graph_layout <- create_layout(filtered_graph, layout = "fr")
+
+# Enhanced plot with labels, colors, and improved legend
+p <- ggraph(graph_layout) +  # Using precomputed layout
+  geom_edge_link(aes(width = edge_betweenness_sum / max(edge_betweenness_sum), 
+                     alpha = edge_betweenness_sum / max(edge_betweenness_sum), 
+                     tooltip = edge_betweenness_sum), 
+                 color = "gray") + # Customize edge appearance
+  geom_node_point(aes(size = betweenness_centrality, color = cluster, 
+                      alpha = ifelse(betweenness_centrality >= 3000000, 1, 0.4),
+                      tooltip = paste("ID:", id, "<br>Cluster:", cluster, "<br>Betweenness:", betweenness_centrality))) +  # Add tooltip information
+  geom_node_text(aes(label = ifelse(betweenness_centrality >= 3000000, id, "")),
+                 vjust = 1.5, hjust = 1.5, check_overlap = TRUE) +
+  scale_size_continuous(range = c(1, 10)) +
+  scale_color_manual(values = c("1" = "blue", "2" = "green", "3" = "red", "4" = "yellow", "5" = "purple", "6" = "orange", "7" = "pink", "8" = "cyan")) +  # Customize based on the number of clusters
+  guides(edge_alpha = guide_legend(title = "Edge Alpha"),
+         size = guide_legend(title = "Betweenness Centrality"),
+         color = guide_legend(title = "Cluster")) +
+  theme_graph() +
+  theme(legend.position = "bottom") +
+  labs(title = "Enhanced Company Network Visualization",
+       subtitle = "Key Nodes Highlighted with Betweenness Centrality >= 3,000,000")
+
+# Convert ggraph plot to plotly object
+p_plotly <- ggplotly(p, tooltip = "tooltip")
+
+# Display the plotly interactive plot
+p_plotly
+```
+
+
+## Q3
+By analyzing the ownership structure, we tracked changes in most influential individuals (VIP) networks over time, identifying key individuals with increasing influence.
+
+### Part 1: Data Wrangling
+
+Split the nodes into people and companies, and filter ownership-related edges
+
+```{r}
+
+
+# Select crucial columns and fill missing values where appropriate
+cleaned_nodes <- mc3_data[["nodes"]] %>%
+  select(id, type, country, HeadOfOrg, revenue,ProductServices,PointOfContact,founding_date,TradeDescription,dob,
+         `_last_edited_by`, `_last_edited_date`, `_date_added`, `_raw_source`, `_algorithm`) %>%
+  mutate(HeadOfOrg = ifelse(is.na(HeadOfOrg), "Unknown", HeadOfOrg),
+         revenue = ifelse(is.na(revenue), 0, revenue))
+
+# Handle missing values in links
+# Select crucial columns and fill missing values where appropriate
+cleaned_links <- mc3_data[["links"]] %>%
+  select(key,source, target, type, start_date, end_date, `_last_edited_by`, `_last_edited_date`, `_date_added`, `_raw_source`, `_algorithm`) %>%
+  mutate(start_date = ifelse(is.na(start_date), "Unknown", start_date),
+         end_date = ifelse(is.na(end_date), "Unknown", end_date))
+
+# Ensure proper data types
+cleaned_nodes <- cleaned_nodes %>%
+  mutate(
+    id = as.character(id),
+    type = as.character(type),
+    country = as.character(country),
+    HeadOfOrg = as.character(HeadOfOrg),
+    revenue = as.numeric(revenue),
+    `_last_edited_by` = as.character(`_last_edited_by`),
+    `_last_edited_date` = as.character(`_last_edited_date`),
+    `_date_added` = as.character(`_date_added`),
+    `_raw_source` = as.character(`_raw_source`),
+    `_algorithm` = as.character(`_algorithm`)
+  )
+
+cleaned_links <- cleaned_links %>%
+ mutate(
+    source = as.character(source),
+    target = as.character(target),
+    type = as.character(type),
+    start_date = as.character(start_date),
+    end_date = as.character(end_date),
+    `_last_edited_by` = as.character(`_last_edited_by`),
+    `_last_edited_date` = as.character(`_last_edited_date`),
+    `_date_added` = as.character(`_date_added`),
+    `_raw_source` = as.character(`_raw_source`),
+    `_algorithm` = as.character(`_algorithm`)
+  )
+
+
+
+```
+
+### Check for data types
+
+```{r}
+# Ensure correct data types for nodes
+cleaned_nodes <- cleaned_nodes %>%
+  mutate(
+    id = as.character(id),
+    type = as.character(type),
+    country = as.character(country),
+    HeadOfOrg = as.character(HeadOfOrg),
+    revenue = as.numeric(revenue),
+      dob = as.POSIXct(dob, format="%Y-%m-%dT%H:%M:%S"),
+    `_last_edited_by` = as.character(`_last_edited_by`),
+    `_last_edited_date` = as.POSIXct(`_last_edited_date`, format="%Y-%m-%dT%H:%M:%S"),
+    founding_date=as.POSIXct(founding_date, format="%Y-%m-%dT%H:%M:%S"),
+    `_date_added` = as.POSIXct(`_date_added`, format="%Y-%m-%dT%H:%M:%S"),
+    `_raw_source` = as.character(`_raw_source`),
+    `_algorithm` = as.character(`_algorithm`)
+    
+  )
+
+# Ensure correct data types for links
+cleaned_links <- cleaned_links %>%
+ mutate(
+    source = as.character(source),
+    target = as.character(target),
+    type = as.character(type),
+    start_date = as.POSIXct(start_date, format="%Y-%m-%dT%H:%M:%S"),
+    end_date = as.POSIXct(end_date, format="%Y-%m-%dT%H:%M:%S"),
+    `_last_edited_by` = as.character(`_last_edited_by`),
+    `_last_edited_date` = as.POSIXct(`_last_edited_date`, format="%Y-%m-%dT%H:%M:%S"),
+    `_date_added` = as.POSIXct(`_date_added`, format="%Y-%m-%dT%H:%M:%S"),
+    `_raw_source` = as.character(`_raw_source`),
+    `_algorithm` = as.character(`_algorithm`)
+  )
+
+# Print cleaned data for inspection
+glimpse(cleaned_nodes)
+glimpse(cleaned_links)
+
+
+```
+
+### **Changing field name**
+
+```{r}
+cleaned_nodes <- cleaned_nodes %>%
+  rename("last_edited_by" = "_last_edited_by",
+         "date_added" = "_date_added",
+         "last_edited_date" = "_last_edited_date",
+         "raw_source" = "_raw_source",
+         "algorithm" = "_algorithm") 
+
+cleaned_links<- cleaned_links %>%
+  rename("last_edited_by" = "_last_edited_by",
+         "date_added" = "_date_added",
+         "last_edited_date" = "_last_edited_date",
+         "raw_source" = "_raw_source",
+         "algorithm" = "_algorithm") 
+```
+
+### Split *'type'* column into separate columns
+
+We are going to tidy the type column by creating two columns "entity2,entity3".
+
+```{r}
+word_list1 <- strsplit(cleaned_nodes$type, "\\.")
+max_elements1 <- max(lengths(word_list1))
+word_list_padded1 <- lapply(word_list1, 
+function(x) c(x, rep(NA, max_elements1 - length(x))))
+word_df1 <- do.call(rbind, word_list_padded1)
+colnames(word_df1) <- paste0("entity", 1:max_elements1)
+word_df1 <- as_tibble(word_df1) %>%
+  select(entity2, entity3)
+class(word_df1)
+```

@@ -166,8 +166,6 @@ cleaned_links <- cleaned_links %>%
 ### Check for data types
 
 ```{r}
-
-
 # Ensure correct data types for nodes
 cleaned_nodes <- cleaned_nodes %>%
   mutate(

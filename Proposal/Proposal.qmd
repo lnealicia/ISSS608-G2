@@ -34,13 +34,13 @@ The project will focus on developing visual analytics tools using R to analyze a
 
     -   Highlight how these transactions impact corporate influence and market dynamics.
 
-3.  **Impact of SouthSeafood Express Corp’s Legal Troubles:**
+3.  **Impact of SouthSeafood Express Corp's Legal Troubles:**
 
     -   Visualize the network associated with SouthSeafood Express Corp.
 
     -   Analyze changes in this network following the corporation's closure due to illegal activities.
 
-    -   Identify companies that benefited from SouthSeafood Express Corp’s downfall.
+    -   Identify companies that benefited from SouthSeafood Express Corp's downfall.
 
     -   Detect other suspicious transactions potentially related to illegal fishing.
 
@@ -70,9 +70,9 @@ The project will focus on developing visual analytics tools using R to analyze a
 
     -   Infer ownership or influence within the network.
 
-    -   Example: Influence maps showing the rise and fall of key players in the industry. This is done through the usage of **tidygraph to create nodes and edges data appropriate for map visualisation
+    -   Example: Influence maps showing the rise and fall of key players in the industry. This is done through the usage of \*\*tidygraph to create nodes and edges data appropriate for map visualisation
 
-4.  **Impact of SouthSeafood Express Corp’s Closure:**
+4.  **Impact of SouthSeafood Express Corp's Closure:**
 
     -   Visualize the business network of SouthSeafood Express Corp before and after its closure.
 
@@ -131,7 +131,7 @@ The project will focus on developing visual analytics tools using R to analyze a
 3.  **Network Analysis:**
 
     -   **`igraph`**: For creating and analyzing network graphs.
-    -   ** test
+    -   \*\* test
 
 4.  **Text Mining (if needed):**
 

@@ -117,7 +117,7 @@ mc3_date\[\["links"\]\] dataframe contains 11 columns and 75817 rows.
 ::: callout-note
 On closer inspection of `mc3_data`, we note some issues to be rectified:
 
-1.  Columns containing dates are treated as “Character” data type instead of *date* data type, which is incorrect. Thus, the data type of the following fields need to be changed to “Date”” data type:
+1.  Columns containing dates are treated as "Character" data type instead of *date* data type, which is incorrect. Thus, the data type of the following fields need to be changed to "Date"" data type:
     -   founding_date
     -   \_last_edited_date
     -   \_date_added
