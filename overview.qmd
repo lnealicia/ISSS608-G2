@@ -61,7 +61,7 @@ To focus on the most relevant period, we filter the data to only keep transactio
 
 Another way to observe changes in corporate structures over time is to visualize the changes in the most active people and businesses. By identifying and tracking these key entities, we can gain insights into how their influence and activities shape the overall corporate structure during different periods. This method complements the transaction volume analysis, providing a more comprehensive view of temporal patterns and structural changes.
 
-## Q1 visualization - no shiny needed. poster? my opinion is no need to show, as the x axis (year) is different - only show findings on poster
+## Q1 visualization - no shiny needed. poster? my opinion is no need to show, as the x axis (year) is different - only show findings in poster
 
 ![Fig 1](images/clipboard-42192613.png)
 
@@ -170,12 +170,28 @@ Given the significant increase in data from 2004 onwards, focusing on every 10 y
 
 In 2005, the network is sparse with moderate VIP connections, indicating balanced influence. By 2015, the network is denser, showing increased influence and control among VIPs. In 2025, the network's complexity peaks, with VIPs owning shares in many companies, indicating heightened market control. By 2035, the network forms a star-like structure, with a central VIP gaining substantial influence and direct connections to numerous companies. This significant power consolidation may be linked to the SouthSeafood incident, triggering the restructuring and concentration of influence.
 
-Q4 methodology
+## Q4 methodology
 
-Q4 visualization
+To visualize and analyze the network associated with SouthSeafood Express Corp and its changes due to illegal fishing behavior,
 
-Q4 key findings
+First, we extracted all nodes and edges linked to SouthSeafood Express Corp and classified all other fishing companies as competitors, with the remaining entities labeled as non-competitors. Then, we identified significant changes of *start_date & end_date* in connections and network structure resulting from SouthSeafood's illegal activities and closure. This analysis revealed shifts in influence, with some companies gaining and others losing power, highlighting patterns of power consolidation.
 
-Conclusion
+## Q4 visualization(3rd shiny, poster: show 2) 
 
-Future Work
+![](images/clipboard-2081906262.png)
+
+![](images/clipboard-3791434694.png)
+
+## Q4 key findings
+
+After the incident, the number of blue nodes (fishing companies) decreased significantly, and yellow nodes (non-competitors) also decreased slightly. Despite the reduction in nodes, the network has become denser, indicating increased interconnectedness among the remaining entities.
+
+![](images/clipboard-3374351179.png)
+
+The results show that the top beneficiaries, all classified as fishing companies, significantly increased their network centrality following SouthSeafood Express Corp’s legal troubles. Anderson-Roberts, Hall, Hartman and Hall, and Kirk Inc., among others, saw the largest gains, suggesting they capitalized on the shift in the network’s structure.
+
+# Conclusion - list out top 3? overlapping nodes as conclusion -  shall be monitored closely in future work
+
+find out all the overlap nodes from Q1-4
+
+# Future Work
