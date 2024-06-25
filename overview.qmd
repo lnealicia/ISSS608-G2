@@ -9,3 +9,19 @@ execute:
   warning: false
   freeze: true
 ---
+
+# Project Brief
+
+background
+
+project objective : 1 sentence goal
+
+1\.
+
+2\.
+
+3\.
+
+4\.
+
+\[insert mermaid graph here\]
