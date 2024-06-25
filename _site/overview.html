@@ -211,7 +211,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-brief" id="toc-project-brief" class="nav-link active" data-scroll-target="#project-brief">Project Brief</a></li>
+  <li><a href="#project-brief" id="toc-project-brief" class="nav-link active" data-scroll-target="#project-brief">Project Brief</a>
+  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#project-objective" id="toc-project-objective" class="nav-link" data-scroll-target="#project-objective">Project objective</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks">Tasks:</a></li>
+  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
+  <ul class="collapse">
+  <li><a href="#q1-methodology" id="toc-q1-methodology" class="nav-link" data-scroll-target="#q1-methodology">Q1 methodology</a></li>
+  <li><a href="#q1-visualization" id="toc-q1-visualization" class="nav-link" data-scroll-target="#q1-visualization">Q1 visualization</a></li>
+  <li><a href="#q1-key-findings" id="toc-q1-key-findings" class="nav-link" data-scroll-target="#q1-key-findings">Q1 key findings</a></li>
+  <li><a href="#q2-methodology" id="toc-q2-methodology" class="nav-link" data-scroll-target="#q2-methodology">Q2 methodology</a>
+  <ul class="collapse">
+  <li><a href="#step-1-filtering-for-relevant-edges" id="toc-step-1-filtering-for-relevant-edges" class="nav-link" data-scroll-target="#step-1-filtering-for-relevant-edges">Step 1: Filtering for Relevant Edges</a></li>
+  <li><a href="#step-2-identifying-suspicious-nodes" id="toc-step-2-identifying-suspicious-nodes" class="nav-link" data-scroll-target="#step-2-identifying-suspicious-nodes">Step 2: Identifying Suspicious Nodes</a></li>
+  <li><a href="#step-3-highlighting-suspicious-nodes" id="toc-step-3-highlighting-suspicious-nodes" class="nav-link" data-scroll-target="#step-3-highlighting-suspicious-nodes">Step 3: Highlighting Suspicious Nodes</a></li>
+  </ul></li>
+  <li><a href="#q2-visualization" id="toc-q2-visualization" class="nav-link" data-scroll-target="#q2-visualization">Q2 visualization</a></li>
+  <li><a href="#q2-key-findings" id="toc-q2-key-findings" class="nav-link" data-scroll-target="#q2-key-findings">Q2 key findings</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -257,13 +276,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="project-brief" class="level1">
 <h1>Project Brief</h1>
-<p>Background:</p>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
 <p>FishEye International is a company dedicated to monitoring and preserving marine ecosystems by tracking commercial fishing activities. In recent times, the commercial fishing community in Oceanus has been disrupted by illegal fishing activities, most notably by SouthSeafood Express Corp.&nbsp;This has highlighted the need for FishEye to enhance its monitoring capabilities. To prevent illegal fishing and better understand the impacts of these activities, FishEye requires advanced visualization tools to analyze and interpret complex business relationships and changes in corporate structures over time.</p>
-<p>Project objective : Develop a visual analytics approach to help FishEye International analysts visualize and understand temporal patterns and changes in corporate structures to identify and prevent illegal fishing.</p>
-<p>Tasks:</p>
+</section>
+<section id="project-objective" class="level2">
+<h2 class="anchored" data-anchor-id="project-objective">Project objective</h2>
+<p>Develop a visual analytics approach to help FishEye International analysts visualize and understand temporal patterns and changes in corporate structures to identify and prevent illegal fishing.</p>
+</section>
+<section id="tasks" class="level2">
+<h2 class="anchored" data-anchor-id="tasks">Tasks:</h2>
 <ol type="1">
 <li><p>temporal patterns and changes in corporate structures.</p></li>
-<li><p>changes in corporate structures over time, focusing on the most active people and businesses.</p></li>
 <li><p>Identify and display examples of atypical business transactions, inferring motivations behind changes in activity.</p></li>
 <li><p>Examine how the influence of a company changes over time, identifying ownership or influence within a network.</p></li>
 <li><p>Visualize the network associated with SouthSeafood Express Corp and analyze how this network and competing businesses change due to their illegal fishing behavior.</p></li>
@@ -282,10 +306,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    B --&gt; |Extracting Links| C[Load Data]</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>   C[Load Data] --&gt;  D[Analysis]</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D1[Q1: temporal changes in corporate structures] </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D2[Q2: changes in most active people/company] </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D3[Q3: atypical business transactions] </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D4[Q4: changes in ownership] </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D5[Q5: changes after illegal incident]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D3[Q2: atypical business transactions] </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D4[Q3: changes in ownership] </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D5[Q4: changes after illegal incident]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
@@ -303,10 +326,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     B --&gt; |Extracting Links| C[Load Data]
    C[Load Data] --&gt;  D[Analysis]
    D[Analysis] --&gt; D1[Q1: temporal changes in corporate structures] 
-   D[Analysis] --&gt; D2[Q2: changes in most active people/company] 
-   D[Analysis] --&gt; D3[Q3: atypical business transactions] 
-   D[Analysis] --&gt; D4[Q4: changes in ownership] 
-   D[Analysis] --&gt; D5[Q5: changes after illegal incident] 
+   D[Analysis] --&gt; D3[Q2: atypical business transactions] 
+   D[Analysis] --&gt; D4[Q3: changes in ownership] 
+   D[Analysis] --&gt; D5[Q4: changes after illegal incident] 
+
 
 </pre>
 </div>
@@ -314,8 +337,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="analysis" class="level1">
+<h1>Analysis</h1>
+<section id="q1-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="q1-methodology">Q1 methodology</h2>
+<p>the lack of time-series data for each node making it difficult to directly compare changes in corporate structures for the same company over time. Therefore, we simplify our approach by assuming that a company’s structure is proportional to its transaction volume. By grouping transaction data by start date and counting the number of transactions for each period, we can illustrate changes in corporate structures over time. This method allows us to visualize temporal patterns and infer structural changes based on transaction activity.</p>
+<p>To focus on the most relevant period, we filter the data to only keep transactions from 2000 (five years before 2005) to 2035 (the end of the dataset). This allows us to capture recent changes to entities while excluding older, less relevant data.</p>
+<p>Another way to observe changes in corporate structures over time is to visualize the changes in the most active people and businesses. By identifying and tracking these key entities, we can gain insights into how their influence and activities shape the overall corporate structure during different periods. This method complements the transaction volume analysis, providing a more comprehensive view of temporal patterns and structural changes.</p>
+</section>
+<section id="q1-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="q1-visualization">Q1 visualization</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-42192613.png" class="img-fluid figure-img"></p>
+<figcaption>Fig 1</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-4104929934.png" class="img-fluid figure-img"></p>
+<figcaption>Fig 2</figcaption>
+</figure>
+</div>
+</section>
+<section id="q1-key-findings" class="level2">
+<h2 class="anchored" data-anchor-id="q1-key-findings">Q1 key findings</h2>
+<p>In Figure 1, we observe that the rapid growth in transactions began around 2005, peaking in 2034, followed by a sharp decline in 2035. Figure 2 further illustrates these trends by showing fluctuations in the number of active companies over time. Despite these fluctuations, there is a general upward trend in the number of active companies, particularly from 2010 onwards, where the numbers reach their highest values in the dataset. This pattern mirrors the transaction volume trends observed in Figure 1. Additionally, we notice a dip in the number of active companies around 2035, followed by an increase. This suggests that a significant event may have occurred around 2035, leading to market restructuring.</p>
+</section>
+<section id="q2-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="q2-methodology">Q2 methodology</h2>
+<p>To address the task of identifying and displaying examples of typical and atypical business transactions, we focused on nodes and edges that signify ownership and employment relationships.</p>
+<section id="step-1-filtering-for-relevant-edges" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-filtering-for-relevant-edges">Step 1: Filtering for Relevant Edges</h3>
+<p>We began by filtering the dataset to retain only the edges representing “Event.Owns.Shareholdership,” “Event.WorksFor,” and “Event.Owns.BeneficialOwnership.” These types of edges are crucial for understanding the ownership and employment structures within the corporate network.</p>
+</section>
+<section id="step-2-identifying-suspicious-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-identifying-suspicious-nodes">Step 2: Identifying Suspicious Nodes</h3>
+<p>Next, we aimed to identify atypical transactions by leveraging centrality measures. Centrality is a critical metric in network analysis that indicates the importance or influence of a node within the network. We calculated centrality scores for all nodes and then filtered out those below a certain centrality threshold to eliminate false positives.</p>
+</section>
+<section id="step-3-highlighting-suspicious-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-highlighting-suspicious-nodes">Step 3: Highlighting Suspicious Nodes</h3>
+<p>By applying the centrality threshold, we identified the top 50 suspicious nodes. These nodes, which exhibit unusually high centrality, are indicative of atypical transactions. Their elevated centrality scores suggest that they play a disproportionately influential role in the network, potentially pointing to suspicious or anomalous behavior.</p>
+<p>Through this method, we can highlight nodes that warrant further investigation and provide insights into the underlying motivations for changes in activity. This analysis helps us identify patterns of influence and ownership that deviate from typical business transactions, thereby uncovering potentially illicit activities within the corporate network.</p>
+</section>
+</section>
+<section id="q2-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="q2-visualization">Q2 visualization</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3534659476.png" class="img-fluid figure-img"></p>
+<figcaption>Fig3</figcaption>
+</figure>
+</div>
+</section>
+<section id="q2-key-findings" class="level2">
+<h2 class="anchored" data-anchor-id="q2-key-findings">Q2 key findings</h2>
+<p><strong>Youting: can you extract out all the 50 transactions list? so that i can put here</strong></p>
+<p>Q3 methodology</p>
+<p>Q3 visualization</p>
+<p>Q3 key findings</p>
+<p>Q4 methodology</p>
+<p>Q4 visualization</p>
+<p>Q4 key findings</p>
+<p>Conclusion</p>
+<p>Future Work</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
