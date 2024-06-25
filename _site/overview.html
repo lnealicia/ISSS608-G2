@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,6 +102,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -170,7 +207,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#project-brief" id="toc-project-brief" class="nav-link active" data-scroll-target="#project-brief">Project Brief</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -201,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 22, 2024</p>
+      <p class="date-modified">June 26, 2024</p>
     </div>
   </div>
     
@@ -212,8 +255,68 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="project-brief" class="level1">
+<h1>Project Brief</h1>
+<p>Background:</p>
+<p>FishEye International is a company dedicated to monitoring and preserving marine ecosystems by tracking commercial fishing activities. In recent times, the commercial fishing community in Oceanus has been disrupted by illegal fishing activities, most notably by SouthSeafood Express Corp.&nbsp;This has highlighted the need for FishEye to enhance its monitoring capabilities. To prevent illegal fishing and better understand the impacts of these activities, FishEye requires advanced visualization tools to analyze and interpret complex business relationships and changes in corporate structures over time.</p>
+<p>Project objective : Develop a visual analytics approach to help FishEye International analysts visualize and understand temporal patterns and changes in corporate structures to identify and prevent illegal fishing.</p>
+<p>Tasks:</p>
+<ol type="1">
+<li><p>temporal patterns and changes in corporate structures.</p></li>
+<li><p>changes in corporate structures over time, focusing on the most active people and businesses.</p></li>
+<li><p>Identify and display examples of atypical business transactions, inferring motivations behind changes in activity.</p></li>
+<li><p>Examine how the influence of a company changes over time, identifying ownership or influence within a network.</p></li>
+<li><p>Visualize the network associated with SouthSeafood Express Corp and analyze how this network and competing businesses change due to their illegal fishing behavior.</p></li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    A[Preprocessing] --&gt; |Loading required libraries| B[Data Wrangling]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    A --&gt; |Loading libraries| B[Data Wrangling]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    A --&gt; |Renaming Columns| B[Data Wrangling]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    A --&gt; |Standardizing Date Time Formats| B[Data Wrangling]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    A --&gt; |Splitting Words| B[Data Wrangling]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    A --&gt; |Loading Data| B[Data Wrangling]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    B[Data Wrangling] --&gt; |Handling Missing Values| C[Load Data]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    B --&gt; |Setting empty values in revenue to 0| C[Load Data]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    B --&gt; |Extracting Nodes| C[Load Data]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    B --&gt; |Extracting Links| C[Load Data]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>   C[Load Data] --&gt;  D[Analysis]</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D1[Q1: temporal changes in corporate structures] </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D2[Q2: changes in most active people/company] </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D3[Q3: atypical business transactions] </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D4[Q4: changes in ownership] </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>   D[Analysis] --&gt; D5[Q5: changes after illegal incident]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Preprocessing] --&gt; |Loading required libraries| B[Data Wrangling]
+    A --&gt; |Loading libraries| B[Data Wrangling]
+    A --&gt; |Renaming Columns| B[Data Wrangling]
+    A --&gt; |Standardizing Date Time Formats| B[Data Wrangling]
+    A --&gt; |Splitting Words| B[Data Wrangling]
+    A --&gt; |Loading Data| B[Data Wrangling]
+    B[Data Wrangling] --&gt; |Handling Missing Values| C[Load Data]
+    B --&gt; |Setting empty values in revenue to 0| C[Load Data]
+    B --&gt; |Extracting Nodes| C[Load Data]
+    B --&gt; |Extracting Links| C[Load Data]
+   C[Load Data] --&gt;  D[Analysis]
+   D[Analysis] --&gt; D1[Q1: temporal changes in corporate structures] 
+   D[Analysis] --&gt; D2[Q2: changes in most active people/company] 
+   D[Analysis] --&gt; D3[Q3: atypical business transactions] 
+   D[Analysis] --&gt; D4[Q4: changes in ownership] 
+   D[Analysis] --&gt; D5[Q5: changes after illegal incident] 
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -12,16 +12,89 @@ execute:
 
 # Project Brief
 
-background
+## Background
 
-project objective : 1 sentence goal
+FishEye International is a company dedicated to monitoring and preserving marine ecosystems by tracking commercial fishing activities. In recent times, the commercial fishing community in Oceanus has been disrupted by illegal fishing activities, most notably by SouthSeafood Express Corp. This has highlighted the need for FishEye to enhance its monitoring capabilities. To prevent illegal fishing and better understand the impacts of these activities, FishEye requires advanced visualization tools to analyze and interpret complex business relationships and changes in corporate structures over time.
 
-1\.
+## Project objective 
 
-2\.
+Develop a visual analytics approach to help FishEye International analysts visualize and understand temporal patterns and changes in corporate structures to identify and prevent illegal fishing.
 
-3\.
+## Tasks:
 
-4\.
+1.  temporal patterns and changes in corporate structures.
 
-\[insert mermaid graph here\]
+2.  Identify and display examples of atypical business transactions, inferring motivations behind changes in activity.
+
+3.  Examine how the influence of a company changes over time, identifying ownership or influence within a network.
+
+4.  Visualize the network associated with SouthSeafood Express Corp and analyze how this network and competing businesses change due to their illegal fishing behavior.
+
+```{mermaid}
+flowchart LR
+    A[Preprocessing] --> |Loading required libraries| B[Data Wrangling]
+    A --> |Loading libraries| B[Data Wrangling]
+    A --> |Renaming Columns| B[Data Wrangling]
+    A --> |Standardizing Date Time Formats| B[Data Wrangling]
+    A --> |Splitting Words| B[Data Wrangling]
+    A --> |Loading Data| B[Data Wrangling]
+    B[Data Wrangling] --> |Handling Missing Values| C[Load Data]
+    B --> |Setting empty values in revenue to 0| C[Load Data]
+    B --> |Extracting Nodes| C[Load Data]
+    B --> |Extracting Links| C[Load Data]
+   C[Load Data] -->  D[Analysis]
+   D[Analysis] --> D1[Q1: temporal changes in corporate structures] 
+   D[Analysis] --> D3[Q2: atypical business transactions] 
+   D[Analysis] --> D4[Q3: changes in ownership] 
+   D[Analysis] --> D5[Q4: changes after illegal incident] 
+
+
+```
+
+# Analysis
+
+## Q1 methodology 
+
+the lack of time-series data for each node making it difficult to directly compare changes in corporate structures for the same company over time. Therefore, we simplify our approach by assuming that a company's structure is proportional to its transaction volume. By grouping transaction data by start date and counting the number of transactions for each period, we can illustrate changes in corporate structures over time. This method allows us to visualize temporal patterns and infer structural changes based on transaction activity.
+
+To focus on the most relevant period, we filter the data to only keep transactions from 2000 (five years before 2005) to 2035 (the end of the dataset). This allows us to capture recent changes to entities while excluding older, less relevant data.
+
+Another way to observe changes in corporate structures over time is to visualize the changes in the most active people and businesses. By identifying and tracking these key entities, we can gain insights into how their influence and activities shape the overall corporate structure during different periods. This method complements the transaction volume analysis, providing a more comprehensive view of temporal patterns and structural changes.
+
+## Q1 visualization
+
+![](images/clipboard-42192613.png)
+
+fig 1
+
+## Q1 key findings
+
+Above fig 1 shows that the rapid growth in transactions started around 2005, before reaching its peak at 2034 and sharply dropping in 2035, likely due to after effects of the SouthSeafood Express Corp incident.
+
+Q2 methodology
+
+Q2 visualization
+
+Q2 key findings
+
+Q3 methodology
+
+Q3 visualization
+
+Q3 key findings
+
+Q4 methodology
+
+Q4 visualization
+
+Q4 key findings
+
+Q5 methodology
+
+Q5 visualization
+
+Q5 key findings
+
+Conclusion
+
+Future Work
