@@ -61,7 +61,7 @@ To focus on the most relevant period, we filter the data to only keep transactio
 
 Another way to observe changes in corporate structures over time is to visualize the changes in the most active people and businesses. By identifying and tracking these key entities, we can gain insights into how their influence and activities shape the overall corporate structure during different periods. This method complements the transaction volume analysis, providing a more comprehensive view of temporal patterns and structural changes.
 
-## Q1 visualization
+## Q1 visualization - no shiny needed. poster? my opinion is no need to show, as the x axis (year) is different - only show findings on poster
 
 ![Fig 1](images/clipboard-42192613.png)
 
@@ -89,19 +89,86 @@ By applying the centrality threshold, we identified the top 50 suspicious nodes.
 
 Through this method, we can highlight nodes that warrant further investigation and provide insights into the underlying motivations for changes in activity. This analysis helps us identify patterns of influence and ownership that deviate from typical business transactions, thereby uncovering potentially illicit activities within the corporate network.
 
-## Q2 visualization
+## Q2 visualization -1st shiny. poster: show below fig3 and name a few transaction examples as finding
 
 ![Fig3](images/clipboard-3534659476.png)
 
 ## Q2 key findings
 
-**Youting: can you extract out all the 50 transactions list? so that i can put here**
+**Youting: can you extract all the 50 transactions list? so that i can put here**
 
-Q3 methodology
+## Q3 methodology
 
-Q3 visualization
+To address the question of examining how the influence of a company changes over time and identifying ownership or influence within a network, we focused on tracking changes in the most influential individuals (VIPs) and their networks. Here is a summary of our approach:
 
-Q3 key findings
+### Step 1: Splitting Nodes and Filtering Edges
+
+First, we split the nodes into two categories: people and companies. We then filtered the dataset to retain only ownership-related edges, such as those representing shareholdership, beneficial ownership, and employment relationships. This step ensures that we focus on the connections that are relevant to understanding influence within the network.
+
+### Step 2: Identifying Most Influential Individuals (VIPs)
+
+Next, we determined the most influential individuals by setting a threshold for the number of ownership connections. Individuals who exceed this threshold are considered VIPs, as their numerous ownership connections suggest a higher level of influence within the network.
+
+| number of ownership connections | count | percentage |
+|---------------------------------|-------|------------|
+
+|     |     |         |
+|-----|-----|---------|
+| 92  | 4   | 0.00774 |
+
+|     |     |        |
+|-----|-----|--------|
+| 91  | 18  | 0.0349 |
+
+|     |     |         |
+|-----|-----|---------|
+| 29  | 1   | 0.00194 |
+
+|     |     |         |
+|-----|-----|---------|
+| 18  | 2   | 0.00387 |
+
+|     |     |         |
+|-----|-----|---------|
+| 15  | 1   | 0.00194 |
+
+|     |     |         |
+|-----|-----|---------|
+| 13  | 2   | 0.00387 |
+
+|     |     |         |
+|-----|-----|---------|
+| 12  | 3   | 0.00581 |
+
+|     |     |         |
+|-----|-----|---------|
+| 11  | 4   | 0.00774 |
+
+|        |       |       |
+|--------|-------|-------|
+| \<= 10 | 51594 | 99.96 |
+
+Given the significant gap between the top 2 groups and the 3rd, we identified the top 22 individuals (those owning 91 or more companies) as VIPs, as their extensive ownership connections suggest a higher level of influence within the network.
+
+### Step 3: Filtering Connections Involving Influential Individuals
+
+Finally, we filtered the ownership connections to include only those involving these 22 influential individuals (VIPs). By focusing on these connections, we can track how the influence of these key individuals changes over time and how their networks
+
+## Q3 visualization (2nd shiny: can do plotly and show all 4 years / all years in 1 plot? poster: show 4 plots)
+
+Given the significant increase in data from 2004 onwards, focusing on every 10 years from 2005 to 2035 would provide a more detailed analysis of changes in ownership and influence.
+
+![Fig 4](images/clipboard-1617149684.png)
+
+![Fig 5](images/clipboard-4274104428.png)
+
+![Fig 6](images/clipboard-2432472196.png)
+
+![Fig 7](images/clipboard-1249221300.png)
+
+## Q3 key findings
+
+In 2005, the network is sparse with moderate VIP connections, indicating balanced influence. By 2015, the network is denser, showing increased influence and control among VIPs. In 2025, the network's complexity peaks, with VIPs owning shares in many companies, indicating heightened market control. By 2035, the network forms a star-like structure, with a central VIP gaining substantial influence and direct connections to numerous companies. This significant power consolidation may be linked to the SouthSeafood incident, triggering the restructuring and concentration of influence.
 
 Q4 methodology
 

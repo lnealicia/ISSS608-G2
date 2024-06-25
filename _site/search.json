@@ -67,6 +67,41 @@
     "href": "overview.html#q2-key-findings",
     "title": "Overview",
     "section": "Q2 key findings",
-    "text": "Q2 key findings\nYouting: can you extract out all the 50 transactions list? so that i can put here\nQ3 methodology\nQ3 visualization\nQ3 key findings\nQ4 methodology\nQ4 visualization\nQ4 key findings\nConclusion\nFuture Work"
+    "text": "Q2 key findings\nYouting: can you extract all the 50 transactions list? so that i can put here"
+  },
+  {
+    "objectID": "overview.html#q1-visualization---no-shiny-needed.-poster-my-opinion-is-no-need-to-show-as-the-x-axis-year-is-different---only-show-findings-on-poster",
+    "href": "overview.html#q1-visualization---no-shiny-needed.-poster-my-opinion-is-no-need-to-show-as-the-x-axis-year-is-different---only-show-findings-on-poster",
+    "title": "Overview",
+    "section": "Q1 visualization - no shiny needed. poster? my opinion is no need to show, as the x axis (year) is different - only show findings on poster",
+    "text": "Q1 visualization - no shiny needed. poster? my opinion is no need to show, as the x axis (year) is different - only show findings on poster\n\n\n\nFig 1\n\n\n\n\n\nFig 2"
+  },
+  {
+    "objectID": "overview.html#q2-visualization--1st-shiny.-poster-show-below-fig3-and-name-a-few-transaction-examples-as-finding",
+    "href": "overview.html#q2-visualization--1st-shiny.-poster-show-below-fig3-and-name-a-few-transaction-examples-as-finding",
+    "title": "Overview",
+    "section": "Q2 visualization -1st shiny. poster: show below fig3 and name a few transaction examples as finding",
+    "text": "Q2 visualization -1st shiny. poster: show below fig3 and name a few transaction examples as finding\n\n\n\nFig3"
+  },
+  {
+    "objectID": "overview.html#q3-methodology",
+    "href": "overview.html#q3-methodology",
+    "title": "Overview",
+    "section": "Q3 methodology",
+    "text": "Q3 methodology\nTo address the question of examining how the influence of a company changes over time and identifying ownership or influence within a network, we focused on tracking changes in the most influential individuals (VIPs) and their networks. Here is a summary of our approach:\n\nStep 1: Splitting Nodes and Filtering Edges\nFirst, we split the nodes into two categories: people and companies. We then filtered the dataset to retain only ownership-related edges, such as those representing shareholdership, beneficial ownership, and employment relationships. This step ensures that we focus on the connections that are relevant to understanding influence within the network.\n\n\nStep 2: Identifying Most Influential Individuals (VIPs)\nNext, we determined the most influential individuals by setting a threshold for the number of ownership connections. Individuals who exceed this threshold are considered VIPs, as their numerous ownership connections suggest a higher level of influence within the network.\n\n\n\nnumber of ownership connections\ncount\npercentage\n\n\n\n\n\n\n\n\n92\n4\n0.00774\n\n\n\n\n\n\n91\n18\n0.0349\n\n\n\n\n\n\n29\n1\n0.00194\n\n\n\n\n\n\n18\n2\n0.00387\n\n\n\n\n\n\n15\n1\n0.00194\n\n\n\n\n\n\n13\n2\n0.00387\n\n\n\n\n\n\n12\n3\n0.00581\n\n\n\n\n\n\n11\n4\n0.00774\n\n\n\n\n\n\n&lt;= 10\n51594\n99.96\n\n\n\nGiven the significant gap between the top 2 groups and the 3rd, we identified the top 22 individuals (those owning 91 or more companies) as VIPs, as their extensive ownership connections suggest a higher level of influence within the network.\n\n\nStep 3: Filtering Connections Involving Influential Individuals\nFinally, we filtered the ownership connections to include only those involving these 22 influential individuals (VIPs). By focusing on these connections, we can track how the influence of these key individuals changes over time and how their networks"
+  },
+  {
+    "objectID": "overview.html#q3-visualization-2nd-shiny-can-do-plotly-and-show-all-4-years-all-years-in-1-plot-poster-show-4-plots",
+    "href": "overview.html#q3-visualization-2nd-shiny-can-do-plotly-and-show-all-4-years-all-years-in-1-plot-poster-show-4-plots",
+    "title": "Overview",
+    "section": "Q3 visualization (2nd shiny: can do plotly and show all 4 years / all years in 1 plot? poster: show 4 plots)",
+    "text": "Q3 visualization (2nd shiny: can do plotly and show all 4 years / all years in 1 plot? poster: show 4 plots)\nGiven the significant increase in data from 2004 onwards, focusing on every 10 years from 2005 to 2035 would provide a more detailed analysis of changes in ownership and influence.\n\n\n\nFig 4\n\n\n\n\n\nFig 5\n\n\n\n\n\nFig 6\n\n\n\n\n\nFig 7"
+  },
+  {
+    "objectID": "overview.html#q3-key-findings",
+    "href": "overview.html#q3-key-findings",
+    "title": "Overview",
+    "section": "Q3 key findings",
+    "text": "Q3 key findings\nIn 2005, the network is sparse with moderate VIP connections, indicating balanced influence. By 2015, the network is denser, showing increased influence and control among VIPs. In 2025, the network’s complexity peaks, with VIPs owning shares in many companies, indicating heightened market control. By 2035, the network forms a star-like structure, with a central VIP gaining substantial influence and direct connections to numerous companies. This significant power consolidation may be linked to the SouthSeafood incident, triggering the restructuring and concentration of influence.\nQ4 methodology\nQ4 visualization\nQ4 key findings\nConclusion\nFuture Work"
   }
 ]
