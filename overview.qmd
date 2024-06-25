@@ -63,19 +63,39 @@ Another way to observe changes in corporate structures over time is to visualize
 
 ## Q1 visualization
 
-![](images/clipboard-42192613.png)
+![Fig 1](images/clipboard-42192613.png)
 
-fig 1
+![Fig 2](images/clipboard-4104929934.png)
 
 ## Q1 key findings
 
-Above fig 1 shows that the rapid growth in transactions started around 2005, before reaching its peak at 2034 and sharply dropping in 2035, likely due to after effects of the SouthSeafood Express Corp incident.
+In Figure 1, we observe that the rapid growth in transactions began around 2005, peaking in 2034, followed by a sharp decline in 2035. Figure 2 further illustrates these trends by showing fluctuations in the number of active companies over time. Despite these fluctuations, there is a general upward trend in the number of active companies, particularly from 2010 onwards, where the numbers reach their highest values in the dataset. This pattern mirrors the transaction volume trends observed in Figure 1. Additionally, we notice a dip in the number of active companies around 2035, followed by an increase. This suggests that a significant event may have occurred around 2035, leading to market restructuring.
 
-Q2 methodology
+## Q2 methodology
 
-Q2 visualization
+To address the task of identifying and displaying examples of typical and atypical business transactions, we focused on nodes and edges that signify ownership and employment relationships.
 
-Q2 key findings
+### Step 1: Filtering for Relevant Edges
+
+We began by filtering the dataset to retain only the edges representing "Event.Owns.Shareholdership," "Event.WorksFor," and "Event.Owns.BeneficialOwnership." These types of edges are crucial for understanding the ownership and employment structures within the corporate network.
+
+### Step 2: Identifying Suspicious Nodes
+
+Next, we aimed to identify atypical transactions by leveraging centrality measures. Centrality is a critical metric in network analysis that indicates the importance or influence of a node within the network. We calculated centrality scores for all nodes and then filtered out those below a certain centrality threshold to eliminate false positives.
+
+### Step 3: Highlighting Suspicious Nodes
+
+By applying the centrality threshold, we identified the top 50 suspicious nodes. These nodes, which exhibit unusually high centrality, are indicative of atypical transactions. Their elevated centrality scores suggest that they play a disproportionately influential role in the network, potentially pointing to suspicious or anomalous behavior.
+
+Through this method, we can highlight nodes that warrant further investigation and provide insights into the underlying motivations for changes in activity. This analysis helps us identify patterns of influence and ownership that deviate from typical business transactions, thereby uncovering potentially illicit activities within the corporate network.
+
+## Q2 visualization
+
+![Fig3](images/clipboard-3534659476.png)
+
+## Q2 key findings
+
+**Youting: can you extract out all the 50 transactions list? so that i can put here**
 
 Q3 methodology
 
@@ -88,12 +108,6 @@ Q4 methodology
 Q4 visualization
 
 Q4 key findings
-
-Q5 methodology
-
-Q5 visualization
-
-Q5 key findings
 
 Conclusion
 
