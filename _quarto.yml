@@ -6,28 +6,18 @@ website:
   navbar:
     left: 
       - icon: pencil-square
-        text: "Proposal"
+        text: "Overview"
         menu:
           - text: "Proposal"
             href: "Proposal/Proposal.html"
           - text: "Overview"
             href: "overview.html"
-      - text: "Task Questions"
+      - text: "Task"
         menu:
           - text: "Task Information"
             href: "Task/Info.html"
-          - text: "Overview"
+          - text: "Code"
             href: "Task/combined.html"
-          - text: "Data Preprocessing"
-            href: "Task/DataPreprocessing.html"
-          - text: "Q1"
-            href: "Task/Q1.html"
-          - text: "Q2"
-            href: "Task/Q2.html"
-          - text: "Q3"
-            href: "Task/Q3.html"
-          - text: "Q4"
-            href: "Task/Q4.html"
       - icon: book-half
         text: "Meeting Minutes"
         menu:

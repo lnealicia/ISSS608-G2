@@ -1053,6 +1053,7 @@ The most recent link: GvardeyskAmerica Shipping Plc is the shareholder of Arawak
 :::
 
 ## Finding atypical Business Relationships
+
 ```{r}
 # Creating the graph object
 mc3_graph1 <- tbl_graph(nodes = mc3_nodes1, edges = mc3_edges, directed = FALSE) %>%
@@ -1060,6 +1061,7 @@ mc3_graph1 <- tbl_graph(nodes = mc3_nodes1, edges = mc3_edges, directed = FALSE)
          closeness_centrality = centrality_closeness())
   theme_graph()
 ```
+
 ```{r}
 # Identify top nodes by betweenness centrality
 top_nodes <- mc3_graph1 %>% 
@@ -1137,10 +1139,10 @@ ggraph(filtered_graph, layout = "fr") + # Using Fruchterman-Reingold layout
 
 
 ```
+
 ## Refining visualisation
 
 We first will need to sift out edges with some form of ownership or working relationship. Following that, the centrality threshold will need to be defined so that most false positives are being filtered out through it and then finally using *slice* to only take the top 50 edges.
-
 
 ### Step 3, take only the top 50 links
 
@@ -1176,7 +1178,6 @@ ggraph(graph_layout) + # Using precomputed layout
        subtitle = "Nodes colored by closeness centrality and sized by betweenness centrality",
        caption = "Data Source: mc3.json") # Add titles and captions
 ```
-
 
 ### **Interpretation**
 
@@ -1285,8 +1286,8 @@ p_plotly <- ggplotly(p, tooltip = "tooltip")
 p_plotly
 ```
 
-
 ## Q3
+
 By analyzing the ownership structure, we tracked changes in most influential individuals (VIP) networks over time, identifying key individuals with increasing influence.
 
 ### Part 1: Data Wrangling
@@ -1637,6 +1638,7 @@ p2015 <- plot(g_vip_filtered_2015, vertex.label = NA, vertex.size = V(g_vip_filt
 
 
 ```
+
 ## Question 4
 
 For part 1, the focus was on identifying the network associated with SouthSeafood Express Corp and visualizing how this network and competing businesses changed as a result of their illegal fishing behavior.
@@ -1833,7 +1835,6 @@ ggplot(top_beneficiaries_info, aes(x = reorder(id, change), y = change)) +
 ```
 
 The results show that the top beneficiaries, all classified as fishing companies, significantly increased their network centrality following SouthSeafood Express Corp's legal troubles. Anderson-Roberts, Hall, Hartman and Hall, and Kirk Inc., among others, saw the largest gains, suggesting they capitalized on the shift in the network's structure.
-
 
 By 2015, the network has grown denser, suggesting increased interconnectedness and influence consolidation. More VIPs are connected to multiple companies (orange nodes), indicating a significant rise in their influence and control over the network.
 
