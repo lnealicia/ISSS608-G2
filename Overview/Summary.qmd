@@ -10,7 +10,7 @@ execute:
   freeze: true
 ---
 
-# Project Brief
+# Project Summary
 
 ## Background
 
