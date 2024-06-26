@@ -4,4 +4,4 @@ date: "9 June 2024"
 date-modified: "last-modified"
 ---
 
-![](images/Visual Analytics Poster.jpg)
+![](images/Visual Analytics Poster-01.jpg)
