@@ -16,7 +16,7 @@ execute:
 
 FishEye International is a company dedicated to monitoring and preserving marine ecosystems by tracking commercial fishing activities. In recent times, the commercial fishing community in Oceanus has been disrupted by illegal fishing activities, most notably by SouthSeafood Express Corp. This has highlighted the need for FishEye to enhance its monitoring capabilities. To prevent illegal fishing and better understand the impacts of these activities, FishEye requires advanced visualization tools to analyze and interpret complex business relationships and changes in corporate structures over time.
 
-## Project objective 
+## Project objective
 
 Develop a visual analytics approach to help FishEye International analysts visualize and understand temporal patterns and changes in corporate structures to identify and prevent illegal fishing.
 
@@ -53,7 +53,7 @@ flowchart LR
 
 # Analysis
 
-## Q1 methodology 
+## Q1 methodology
 
 the lack of time-series data for each node making it difficult to directly compare changes in corporate structures for the same company over time. Therefore, we simplify our approach by assuming that a company's structure is proportional to its transaction volume. By grouping transaction data by start date and counting the number of transactions for each period, we can illustrate changes in corporate structures over time. This method allows us to visualize temporal patterns and infer structural changes based on transaction activity.
 
@@ -176,7 +176,7 @@ To visualize and analyze the network associated with SouthSeafood Express Corp a
 
 First, we extracted all nodes and edges linked to SouthSeafood Express Corp and classified all other fishing companies as competitors, with the remaining entities labeled as non-competitors. Then, we identified significant changes of *start_date & end_date* in connections and network structure resulting from SouthSeafood's illegal activities and closure. This analysis revealed shifts in influence, with some companies gaining and others losing power, highlighting patterns of power consolidation.
 
-## Q4 visualization(3rd shiny, poster: show 2) 
+## Q4 visualization(3rd shiny, poster: show 2)
 
 ![](images/clipboard-2081906262.png)
 
@@ -190,7 +190,7 @@ After the incident, the number of blue nodes (fishing companies) decreased signi
 
 The results show that the top beneficiaries, all classified as fishing companies, significantly increased their network centrality following SouthSeafood Express Corp’s legal troubles. Anderson-Roberts, Hall, Hartman and Hall, and Kirk Inc., among others, saw the largest gains, suggesting they capitalized on the shift in the network’s structure.
 
-# Conclusion - list out top 3? overlapping nodes as conclusion -  shall be monitored closely in future work
+# Conclusion - list out top 3? overlapping nodes as conclusion - shall be monitored closely in future work
 
 find out all the overlap nodes from Q1-4
 

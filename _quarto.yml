@@ -9,9 +9,9 @@ website:
         text: "Overview"
         menu:
           - text: "Proposal"
-            href: "Proposal/Proposal.html"
+            href: "Overview/Proposal.html"
           - text: "Overview"
-            href: "overview.html"
+            href: "Overview/Overview.html"
       - text: "Task"
         menu:
           - text: "Task Information"

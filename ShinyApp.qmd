@@ -11,3 +11,5 @@ date-modified: "last-modified"
 The R Shiny application aims to help user explore the data provided by MC3 of the VAST Challenge 2024.
 
 The Shiny App can be accessed on Shiny.io here.
+
+You can find the user guide below.
