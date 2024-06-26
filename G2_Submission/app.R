@@ -14,7 +14,7 @@ ui <- fluidPage(
       textOutput("introText"),
       verbatimTextOutput("cleanedNodes"),
       verbatimTextOutput("cleanedLinks"),
-      plotOutput("vipPlot2022"),
+      plotOutput("vipPlot"),
       plotOutput("vipPlot2025"),
       plotOutput("vipPlot2035"),
       tableOutput("dataTableNodes"),

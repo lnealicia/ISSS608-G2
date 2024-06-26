@@ -1163,7 +1163,10 @@ The most recent link: GvardeyskAmerica Shipping Plc is the shareholder of Arawak
 
 ## Finding atypical Business Relationships
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51b3732 (Rebase)
 ```{r}
 # Creating the graph object
 mc3_graph1 <- tbl_graph(nodes = mc3_nodes1, edges = mc3_edges, directed = FALSE) %>%
@@ -1252,15 +1255,26 @@ ggraph(filtered_graph, layout = "fr") + # Using Fruchterman-Reingold layout
 
 ```
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51b3732 (Rebase)
 ## Refining visualisation
 
 We first will need to sift out edges with some form of ownership or working relationship. Following that, the centrality threshold will need to be defined so that most false positives are being filtered out through it and then finally using *slice* to only take the top 50 edges.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51b3732 (Rebase)
 ### Step 3, take only the top 50 links
 
 
 ```{r}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51b3732 (Rebase)
 # Get top 50 links based on the sum of betweenness centrality of source and target nodes
 top_50_links <- filtered_graph %>%
   activate(edges) %>%
@@ -1291,9 +1305,31 @@ ggraph(graph_layout) + # Using precomputed layout
   labs(title = "Top 50 Links in Atypical Business Transactions",
        subtitle = "Nodes colored by closeness centrality and sized by betweenness centrality",
        caption = "Data Source: mc3.json") # Add titles and captions
+<<<<<<< HEAD
 ```
 
 
+=======
+
+# Extract the top 50 links based on the sum of betweenness centrality
+top_50_links <- filtered_graph %>%
+  activate(edges) %>%
+  mutate(edge_betweenness_sum = .N()$betweenness_centrality[from] + .N()$betweenness_centrality[to]) %>%
+  arrange(desc(edge_betweenness_sum)) %>%
+  slice(1:50) %>%
+  as_tibble()
+
+# Create a data frame with the relevant information
+top_50_links_df <- top_50_links %>%
+  select(from, to, edge_betweenness_sum)
+
+# Display the table using knitr
+kable(top_50_links_df, caption = "Top 50 Links Based on Betweenness Centrality Sum")
+```
+
+
+
+>>>>>>> 51b3732 (Rebase)
 ### **Interpretation**
 
 1.  **Node Size (Betweenness Centrality):**
@@ -1403,8 +1439,13 @@ p_plotly
 ```
 
 
+<<<<<<< HEAD
 ## Q3
 
+=======
+
+## Q3
+>>>>>>> 51b3732 (Rebase)
 By analyzing the ownership structure, we tracked changes in most influential individuals (VIP) networks over time, identifying key individuals with increasing influence.
 
 ### Part 1: Data Wrangling
@@ -1760,6 +1801,10 @@ In 2005, the network shows a relatively sparse structure with a moderate number 
 
 
 ```{r}
+<<<<<<< HEAD
+=======
+pacman::p_load(ggnetwork)
+>>>>>>> 51b3732 (Rebase)
 # Specify the year
 filter_year <- 2015
 
@@ -1773,6 +1818,7 @@ g_vip_filtered_2015 <- graph_from_data_frame(d = vip_connections_filtered_2015, 
 # Identify VIPs (nodes_people) and Companies
 V(g_vip_filtered_2015)$type <- ifelse(V(g_vip_filtered_2015)$name %in% nodes_people$id, "VIP", "Company")
 
+<<<<<<< HEAD
 # Define colors and sizes
 V(g_vip_filtered_2015)$color <- ifelse(V(g_vip_filtered_2015)$type == "VIP", "blue", "orange")
 V(g_vip_filtered_2015)$size <- ifelse(V(g_vip_filtered_2015)$type == "VIP", 8, 5)
@@ -1786,6 +1832,34 @@ p2015 <- plot(g_vip_filtered_2015, vertex.label = NA, vertex.size = V(g_vip_filt
 ```
 
 
+=======
+# Convert the igraph object to a data frame suitable for ggplot
+g_vip_filtered_2015_gg <- ggnetwork(g_vip_filtered_2015)
+
+# Define colors and sizes
+g_vip_filtered_2015_gg$color <- ifelse(g_vip_filtered_2015_gg$type == "VIP", "blue", "orange")
+g_vip_filtered_2015_gg$size <- ifelse(g_vip_filtered_2015_gg$type == "VIP", 8, 5)
+
+# Create the plotly network plot
+p2015 <- plot_ly() %>%
+  add_segments(data = g_vip_filtered_2015_gg, 
+               x = ~x, y = ~y, xend = ~xend, yend = ~yend,
+               line = list(color = 'gray'), hoverinfo = 'none') %>%
+  add_markers(data = g_vip_filtered_2015_gg, 
+              x = ~x, y = ~y,
+              color = ~color, size = ~size, 
+              hoverinfo = 'text',
+              text = ~paste("Node:", name, "<br>Type:", type)) %>%
+  layout(title = paste("VIP Connections Network for", filter_year),
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+# Display the plot
+p2015
+
+```
+
+>>>>>>> 51b3732 (Rebase)
 ## Question 4
 
 For part 1, the focus was on identifying the network associated with SouthSeafood Express Corp and visualizing how this network and competing businesses changed as a result of their illegal fishing behavior.
@@ -1886,6 +1960,7 @@ Identify and highlight significant changes in connections and structure due to t
 
 
 ```{r}
+<<<<<<< HEAD
 par(mfrow = c(2, 1))
 
 plot_before <- ggraph(g_before, layout = "fr") +
@@ -1898,10 +1973,32 @@ plot_before <- ggraph(g_before, layout = "fr") +
   theme_void() +
   theme(legend.position = "bottom") +
   labs(title = "Network Before Incident")
+=======
+# Function to create plotly network plot from ggraph
+create_plotly_network <- function(graph, title) {
+  ggraph_df <- ggraph(graph, layout = "fr") + 
+    geom_edge_link(aes(edge_alpha = 0.8), show.legend = FALSE, color = "gray", width = 1) + 
+    geom_node_point(aes(color = ifelse(name == "SouthSeafood Express Corp", "SouthSeafood", 
+                                       ifelse(type == "Entity.Organization.FishingCompany", "FishingCompany", "Other"))), 
+                    size = 3, alpha = 0.6, show.legend = TRUE) + 
+    scale_color_manual(values = c("SouthSeafood" = "red", "FishingCompany" = "blue", "Other" = "orange"), 
+                       name = "Type") + 
+    theme_void() + 
+    theme(legend.position = "bottom") + 
+    labs(title = title)
+  
+  # Convert ggplot object to a plotly object
+  ggplotly(ggraph_df)
+}
+
+# Create the plot for the network before the incident
+plot_before <- create_plotly_network(g_before, "Network Before Incident")
+>>>>>>> 51b3732 (Rebase)
 
 # Show the plot for the network before the incident
 plot_before
 
+<<<<<<< HEAD
 
 plot_after <- ggraph(g_after, layout = "fr") +
   geom_edge_link(aes(edge_alpha = 0.8), show.legend = FALSE, color = "gray", width = 1) +
@@ -1913,6 +2010,10 @@ plot_after <- ggraph(g_after, layout = "fr") +
   theme_void() +
   theme(legend.position = "bottom") +
   labs(title = "Network After Incident")
+=======
+# Create the plot for the network after the incident
+plot_after <- create_plotly_network(g_after, "Network After Incident")
+>>>>>>> 51b3732 (Rebase)
 
 # Show the plot for the network after the incident
 plot_after
@@ -1997,6 +2098,10 @@ ggplot(top_beneficiaries_info, aes(x = reorder(id, change), y = change)) +
 
 The results show that the top beneficiaries, all classified as fishing companies, significantly increased their network centrality following SouthSeafood Express Corp's legal troubles. Anderson-Roberts, Hall, Hartman and Hall, and Kirk Inc., among others, saw the largest gains, suggesting they capitalized on the shift in the network's structure.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51b3732 (Rebase)
 By 2015, the network has grown denser, suggesting increased interconnectedness and influence consolidation. More VIPs are connected to multiple companies (orange nodes), indicating a significant rise in their influence and control over the network.
 
 

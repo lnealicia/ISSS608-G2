@@ -1148,6 +1148,7 @@ We first will need to sift out edges with some form of ownership or working rela
 ### Step 3, take only the top 50 links
 
 ```{r}
+
 # Get top 50 links based on the sum of betweenness centrality of source and target nodes
 top_50_links <- filtered_graph %>%
   activate(edges) %>%
@@ -1178,6 +1179,21 @@ ggraph(graph_layout) + # Using precomputed layout
   labs(title = "Top 50 Links in Atypical Business Transactions",
        subtitle = "Nodes colored by closeness centrality and sized by betweenness centrality",
        caption = "Data Source: mc3.json") # Add titles and captions
+
+# Extract the top 50 links based on the sum of betweenness centrality
+top_50_links <- filtered_graph %>%
+  activate(edges) %>%
+  mutate(edge_betweenness_sum = .N()$betweenness_centrality[from] + .N()$betweenness_centrality[to]) %>%
+  arrange(desc(edge_betweenness_sum)) %>%
+  slice(1:50) %>%
+  as_tibble()
+
+# Create a data frame with the relevant information
+top_50_links_df <- top_50_links %>%
+  select(from, to, edge_betweenness_sum)
+
+# Display the table using knitr
+kable(top_50_links_df, caption = "Top 50 Links Based on Betweenness Centrality Sum")
 ```
 
 ### **Interpretation**
