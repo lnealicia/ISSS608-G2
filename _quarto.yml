@@ -10,8 +10,8 @@ website:
         menu:
           - text: "Proposal"
             href: "Overview/Proposal.html"
-          - text: "Overview"
-            href: "Overview/Overview.html"
+          - text: "Summary"
+            href: "Overview/Summary.html"
       - text: "Task"
         menu:
           - text: "Task Information"
