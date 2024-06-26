@@ -4,6 +4,4 @@ date: "9 June 2024"
 date-modified: "last-modified"
 ---
 
-The original poster can be viewed here.
-
-\<\<Testing\>\>
+![](images/Visual Analytics Poster.jpg)
