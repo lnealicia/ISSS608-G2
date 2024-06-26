@@ -1,0 +1,54 @@
+---
+title: "Meeting Minutes 3"
+author: "Group 2"
+date: "June 25, 2024"
+date-modified: last-modified
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# Meeting Minutes 4
+
+Date: 25 June 2024
+
+Attendance: All present
+
+Proposed Project Timeline:
+
+**Current Status:**
+
+Codes have been combined and compiled into combined.qmd
+
+Shiny App started.
+
+**Agenda:**
+
+1.  Confirm project title
+
+2.  Look at progress and determine if re-delegation need to be done
+
+**Discussion Points:**
+
+**Project Title**
+
+-   Confirmed to be "Red Herring Hunt"
+
+**Poster**
+
+-   Keke will write the content
+-   Alicia will finalise the layout and exporting
+
+**Shiny App**
+
+-   You Ting will complete it after consulting issues with Prof Kam
+
+**Deadlines:**
+
+26 June - Poster Due
+
+29 June - Project Submission (website, Shiny app, report)
+
+29 June - Poster Presentation

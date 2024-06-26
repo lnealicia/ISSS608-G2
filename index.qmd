@@ -15,4 +15,4 @@ In this website, you will find our project submission for [VAST Challenge 2024 M
 
 Description of not more than 350 word summarising the motivation, objectives, main features of the application your team are going to build, and
 
-The Project proposal can be found here.
+The Project proposal can be found [here](Overview/Proposal.html).

@@ -27,6 +27,8 @@ website:
             href: "MeetingMinutes/MeetingMinutes2.html"
           - text: "Meeting Minutes 3"
             href: "MeetingMinutes/MeetingMinutes3.html"
+          - text: "Meeting Minutes 4"
+            href: "MeetingMinutes/MeetingMinutes4.html"
       - text: "Shiny App"
         href: "ShinyApp.html"
       - text: "Poster"
