@@ -3,6 +3,16 @@ pacman::p_load(shiny, tidytext, readtext, shinyjs, tidyverse, jsonlite, igraph, 
 
 source("helpers/Settings.R", local = TRUE)$value
 
+kkgraphUI <- source("ui/corp_structure.R", local = TRUE)$value
+kkgraphServer <- source("server/corp_structure.R", local = TRUE)$value
+
+ytgraphUI <- source("ui/network_graph.R", local = TRUE)$value
+ytgraphServer <- source("server/network_graph.R", local = TRUE)$value
+stylesUI <- source("ui/styles.R", local = TRUE)$value
+aligraphUI <- source("ui/influence_graph.R", local = TRUE)$value
+aligraphServer <- source("server/influence_graph.R", local = TRUE)$value
+
+
 # Data loading
 data <- reactive({
   nodes <- readRDS("data/rds/cleaned_nodes.rds")
