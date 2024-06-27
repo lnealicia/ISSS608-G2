@@ -811,6 +811,10 @@ top_graph <- mc3_graph %>%
   activate(edges) %>%
   filter(edge_is_incident(top_node_ids))
 
+# Save the variables into .rds format
+saveRDS(top_node_ids, file = "data/op_node_ids.rds")
+saveRDS(top_graph, file = "data/top_graph.rds")
+
 # Plot the network graph with top nodes
 ggraph(top_graph, layout = "fr") + 
   geom_edge_link(aes(edge_alpha = 0.1, edge_width = 0.1)) +
