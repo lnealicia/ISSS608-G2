@@ -26,7 +26,6 @@ data <- reactive({
 
 ui <- tagList(
   useShinyjs(),
-  stylesUI,
   navbarPage(
     title = "The Red Herring Hunt",
     fluid = TRUE,
