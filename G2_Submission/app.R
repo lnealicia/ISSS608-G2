@@ -1,6 +1,11 @@
+# Load required libraries
+pacman::p_load(
+  shiny, tidytext, readtext, shinyjs, tidyverse, jsonlite, 
+  igraph, tidygraph, ggraph, visNetwork, clock, graphlayouts,
+  plotly, ggiraph, shinyWidgets, ggtext
+)
 
-pacman::p_load(shiny, tidytext, readtext, shinyjs, tidyverse, jsonlite, igraph, tidygraph, ggraph, visNetwork, clock, graphlayouts,plotly,ggiraph, shinyWidgets, ggtext)
-
+# Source helper settings
 source("helpers/Settings.R", local = TRUE)$value
 
 kkgraphUI <- source("ui/corp_structure.R", local = TRUE)$value
@@ -18,12 +23,16 @@ data <- reactive({
   nodes <- readRDS("data/rds/cleaned_nodes.rds")
   links <- readRDS("data/rds/cleaned_links.rds")
   
-  supernetwork <- list(nodes = nodes, links = links)
+  # Merge nodes and links data
+  merged_links <- links %>%
+    left_join(nodes, by = c("source" = "id")) %>%
+    left_join(nodes, by = c("target" = "id"), suffix = c(".source", ".target"))
+  
+  supernetwork <- list(nodes = nodes, links = merged_links, vip_connections = vip_connections)
   return(supernetwork)
 })
 
 # Define UI
-
 ui <- tagList(
   useShinyjs(),
   navbarPage(
@@ -31,16 +40,14 @@ ui <- tagList(
     fluid = TRUE,
     inverse = TRUE,
     collapsible = TRUE,
-    kkgraphUI(supernetwork, "kkgraph"),
-    ytgraphUI(supernetwork, "ytgraph"),
-    aligraphUI(supernetwork, "aligraph")
+    tabPanel("VIP Connections", graphUI("vipGraph"))
   )
 )
 
+# Define server logic
 server <- function(input, output, session) {
-  moduleServer("kkgraph", kkgraphServer, session = session)
-  moduleServer("ytgraph", ytgraphServer, session = session)
-  moduleServer("aligraph", aligraphServer, session = session)
+  callModule(graphServer, "vipGraph", data)
 }
 
+# Run the application
 shinyApp(ui = ui, server = server)
