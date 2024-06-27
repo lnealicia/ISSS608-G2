@@ -6,8 +6,8 @@ source("helpers/Settings.R", local = TRUE)$value
 
 # Data loading
 data <- reactive({
-  nodes <- fromJSON("data/mc3.json")
-  links <- fromJSON("data/mc3.json")
+  nodes <- fromJSON("data/cleaned_nodes.rds")
+  links <- fromJSON("data/cleaned_links.rds")
 })
 
 # Define UI
