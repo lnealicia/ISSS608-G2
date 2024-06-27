@@ -8,6 +8,10 @@ source("helpers/Settings.R", local = TRUE)$value
 data <- reactive({
   nodes <- fromJSON("data/cleaned_nodes.rds")
   links <- fromJSON("data/cleaned_links.rds")
+  
+  supernetwork <- list(nodes = nodes, links = links)
+  
+  return(supernetwork)
 })
 
 # Define UI
