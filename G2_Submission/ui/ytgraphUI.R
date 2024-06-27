@@ -1,6 +1,2 @@
-ytGraphUI <- function(id) {
-  ns <- NS(id)
-  tagList(
-    plotOutput(ns("ytGraphPlot"))
-  )
-}
+# UI for VIP Network
+selectizeInput("selectedVIP", "Select a VIP", choices = NULL, multiple = FALSE, options = list(maxOptions = 1000))
