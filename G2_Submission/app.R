@@ -7,11 +7,10 @@ source("helpers/Settings.R", local = TRUE)$value
 
 # Data loading
 data <- reactive({
-  nodes <- fromJSON("data/cleaned_nodes.rds")
-  links <- fromJSON("data/cleaned_links.rds")
+  nodes <- readRDS("data/rds/cleaned_nodes.rds")
+  links <- readRDS("data/rds/cleaned_links.rds")
   
   supernetwork <- list(nodes = nodes, links = links)
-  
   return(supernetwork)
 })
 
