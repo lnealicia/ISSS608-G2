@@ -1,5 +1,4 @@
 ---
-git ---
 title: "Main solution"
 ---
 
@@ -1192,8 +1191,6 @@ top_50_links <- filtered_graph %>%
 top_50_links_df <- top_50_links %>%
   select(from, to, edge_betweenness_sum)
 
-# Display the table using knitr
-kable(top_50_links_df, caption = "Top 50 Links Based on Betweenness Centrality Sum")
 ```
 
 ### **Interpretation**
