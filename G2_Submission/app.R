@@ -15,21 +15,6 @@ data <- reactive({
   return(supernetwork)
 })
 
-merged_data <- reactive({
-  data_list <- data()
-  nodes <- data_list$nodes
-  links <- data_list$links
-  
-  # Assuming you have a common key to merge on
-  # For example, if `source` and `target` in links correspond to `id` in nodes
-  merged <- links %>%
-    left_join(nodes, by = c("source" = "id")) %>%
-    left_join(nodes, by = c("target" = "id"), suffix = c(".source", ".target"))
-  
-  return(merged)
-})
-
-
 # Define UI
 
 ui <- tagList(
@@ -40,9 +25,9 @@ ui <- tagList(
     fluid = TRUE,
     inverse = TRUE,
     collapsible = TRUE,
-    corpGraphUI(merged_data, "corpGraph"),
-    networkGraphUI(merged_data, "networkGraph"),
-    influenceGraphUI(merged_data, "influenceGraph"),
+    corpGraphUI(supernetwork, "corpGraph"),
+    networkGraphUI(supernetwork, "networkGraph"),
+    influenceGraphUI(supernetwork, "influenceGraph"),
   )
 )
 
