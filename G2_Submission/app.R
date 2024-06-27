@@ -1,7 +1,8 @@
 
-pacman::p_load(tidytext, readtext, shinyjs, tidyverse, jsonlite, igraph, tidygraph, ggraph, visNetwork, clock, graphlayouts,plotly,ggiraph, shinyWidgets, ggtext)
+pacman::p_load(shiny, tidytext, readtext, shinyjs, tidyverse, jsonlite, igraph, tidygraph, ggraph, visNetwork, clock, graphlayouts,plotly,ggiraph, shinyWidgets, ggtext)
 
 source("helpers/Settings.R", local = TRUE)$value
+
 
 
 # Data loading
@@ -14,19 +15,34 @@ data <- reactive({
   return(supernetwork)
 })
 
+merged_data <- reactive({
+  data_list <- data()
+  nodes <- data_list$nodes
+  links <- data_list$links
+  
+  # Assuming you have a common key to merge on
+  # For example, if `source` and `target` in links correspond to `id` in nodes
+  merged <- links %>%
+    left_join(nodes, by = c("source" = "id")) %>%
+    left_join(nodes, by = c("target" = "id"), suffix = c(".source", ".target"))
+  
+  return(merged)
+})
+
+
 # Define UI
 
 ui <- tagList(
   useShinyjs(),
   stylesUI,
   navbarPage(
-    title = "The Big Fish",
+    title = "The Red Herring Hunt",
     fluid = TRUE,
     inverse = TRUE,
     collapsible = TRUE,
-    corpGraphUI(supernetwork, "corpGraph"),
-    networkGraphUI(supernetwork, "networkGraph"),
-    influenceGraphUI(supernetwork, "influenceGraph"),
+    corpGraphUI(merged_data, "corpGraph"),
+    networkGraphUI(merged_data, "networkGraph"),
+    influenceGraphUI(merged_data, "influenceGraph"),
   )
 )
 
