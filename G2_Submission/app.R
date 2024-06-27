@@ -11,26 +11,6 @@ data <- reactive({
 })
 
 # Define UI
-ui <- fluidPage(
-  titlePanel("VIP Connections Analysis"),
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("filter_year", "Select Year:", choices = c(2022, 2025, 2035)),
-      actionButton("update", "Update Plot")
-    ),
-    mainPanel(
-      h2("VIP Connections Network Analysis"),
-      textOutput("introText"),
-      verbatimTextOutput("cleanedNodes"),
-      verbatimTextOutput("cleanedLinks"),
-      plotOutput("vipPlot"),
-      plotOutput("vipPlot2025"),
-      plotOutput("vipPlot2035"),
-      tableOutput("dataTableNodes"),
-      tableOutput("dataTableLinks")
-    )
-  )
-)
 
 ui <- tagList(
   useShinyjs(),
