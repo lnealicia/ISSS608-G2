@@ -3,8 +3,6 @@ pacman::p_load(shiny, tidytext, readtext, shinyjs, tidyverse, jsonlite, igraph, 
 
 source("helpers/Settings.R", local = TRUE)$value
 
-
-
 # Data loading
 data <- reactive({
   nodes <- readRDS("data/rds/cleaned_nodes.rds")
@@ -24,16 +22,16 @@ ui <- tagList(
     fluid = TRUE,
     inverse = TRUE,
     collapsible = TRUE,
-    corpGraphUI(supernetwork, "corpGraph"),
-    networkGraphUI(supernetwork, "networkGraph"),
-    influenceGraphUI(supernetwork, "influenceGraph"),
+    kkgraphUI(supernetwork, "kkgraph"),
+    ytgraphUI(supernetwork, "ytgraph"),
+    aligraphUI(supernetwork, "aligraph")
   )
 )
 
 server <- function(input, output, session) {
-  moduleServer("corpGraph", corpGraphServer, session = session)
-  moduleServer("networkGraph", networkGraphServer, session = session)
-  moduleServer("influenceGraph", influenceGraphServer, session = session)
+  moduleServer("kkgraph", kkgraphServer, session = session)
+  moduleServer("ytgraph", ytgraphServer, session = session)
+  moduleServer("aligraph", aligraphServer, session = session)
 }
 
 shinyApp(ui = ui, server = server)
