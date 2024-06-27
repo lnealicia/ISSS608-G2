@@ -5,30 +5,8 @@ library(ggraph)
 library(igraph)
 library(viridis)
 
-# Load data (assuming mc3_nodes and mc3_edges are available in the environment)
-# mc3_nodes <- read.csv("path_to_mc3_nodes.csv")
-# mc3_edges <- read.csv("path_to_mc3_edges.csv")
-
-# Define UI
-ui <- fluidPage(
-  titlePanel("Business Network Analysis"),
-  
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("linkType", "Select Link Type:", 
-                  choices = c("Shareholdership", "WorksFor", "BeneficialOwnership", "FamilyRelationship")),
-      checkboxGroupInput("nodeType", "Select Node Types:", 
-                         choices = c("Company", "LogisticsCompany", "FishingCompany", "FinancialCompany", 
-                                     "NewsCompany", "NGO", "Person", "CEO"),
-                         selected = c("Company", "LogisticsCompany", "FishingCompany", "FinancialCompany", 
-                                      "NewsCompany", "NGO", "Person", "CEO"))
-    ),
-    
-    mainPanel(
-      plotOutput("networkPlot")
-    )
-  )
-)
+# Load the saved variables
+top_graph <- readRDS("data/top_graph.rds")
 
 # Define server logic
 server <- function(input, output) {
@@ -38,22 +16,18 @@ server <- function(input, output) {
     node_types <- input$nodeType
     
     # Filter edges
-    filtered_edges <- mc3_edges %>%
+    filtered_edges <- top_graph %>%
+      activate(edges) %>%
       filter(type %in% link_type)
     
     # Extract and filter nodes based on edges
-    id1 <- filtered_edges %>%
-      select(source) %>%
-      rename(id = source)
+    node_ids <- filtered_edges %>%
+      pull(from) %>%
+      union(filtered_edges %>% pull(to))
     
-    id2 <- filtered_edges %>%
-      select(target) %>%
-      rename(id = target)
-    
-    filtered_nodes <- rbind(id1, id2) %>%
-      distinct() %>%
-      left_join(mc3_nodes, by = c("id" = "id")) %>%
-      filter(type %in% node_types)
+    filtered_nodes <- top_graph %>%
+      activate(nodes) %>%
+      filter(id %in% node_ids & type %in% node_types)
     
     list(nodes = filtered_nodes, edges = filtered_edges)
   })
@@ -62,12 +36,12 @@ server <- function(input, output) {
     data <- filtered_data()
     
     # Create graph object
-    mc3_graph <- tbl_graph(nodes = data$nodes, edges = data$edges, directed = TRUE) %>%
+    filtered_graph <- tbl_graph(nodes = data$nodes, edges = data$edges, directed = TRUE) %>%
       mutate(betweenness_centrality = centrality_betweenness(),
              closeness_centrality = centrality_closeness())
     
     # Display the network graph
-    ggraph(mc3_graph, layout = "fr") + # Using Fruchterman-Reingold layout
+    ggraph(filtered_graph, layout = "fr") + # Using Fruchterman-Reingold layout
       geom_edge_link(aes(edge_alpha = 0.9, edge_width = 0.1)) + # Customize edge appearance
       geom_node_point(aes(size = betweenness_centrality, color = closeness_centrality)) + # Customize node appearance
       scale_color_viridis_c() + # Use viridis color scale
@@ -78,5 +52,3 @@ server <- function(input, output) {
   })
 }
 
-# Run the application 
-shinyApp(ui = ui, server = server)
