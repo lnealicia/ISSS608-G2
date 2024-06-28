@@ -1,0 +1,46 @@
+---
+title: "Meeting Minutes 3"
+author: "Group 2"
+date: "June 27, 2024"
+date-modified: last-modified
+execute: 
+  eval: true
+  echo: true
+  warning: false
+  freeze: true
+---
+
+# Meeting Minutes 5
+
+Date: 27 June 2024
+
+Attendance: All present
+
+Proposed Project Timeline:
+
+**Current Status:**
+
+Codes have been combined and compiled into combined.qmd
+
+Shiny App started.
+
+**Agenda:**
+
+1.  R Shiny App direction
+
+**Discussion Points:**
+
+**Poster**
+
+-   Completed and submitted
+
+**Shiny App**
+
+-   with reference to [Joy Paas](https://github.com/kjcpaas/ISSS608_Project_Shiny/blob/main/app.R), it was agreed that the Shiny App will be split into modular components for ease of collaborative coding.
+-   The Shiny app code will be modularized by splitting it into separate files for the UI and server components for each graph, as well as a common styles file. This approach makes the code more manageable and allows team members to work on different parts independently.
+
+**Deadlines:**
+
+29 June - Project Submission (website, Shiny app, report)
+
+29 June - Poster Presentation
