@@ -3,8 +3,6 @@ title: "Red Herring Hunt"
 toc: false
 ---
 
-# Red Herring Hunt
-
 Welcome to ISSS608 Visual Analytics and Applications - Group 2 homepage.
 
 ![](images/clipboard-3387111181.png)

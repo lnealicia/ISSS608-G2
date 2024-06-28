@@ -12,6 +12,7 @@ website:
             href: "Overview/Proposal.html"
           - text: "Summary"
             href: "Overview/Summary.html"
+      - icon: cog
       - text: "Task"
         menu:
           - text: "Task Information"
