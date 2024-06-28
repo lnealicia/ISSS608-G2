@@ -9,31 +9,42 @@ aligraphServer <- function(input, output, session, nodes, links) {
     competing_businesses <- nodes() %>%
       filter(entity3 == "FishingCompany")
     
-    # Count the number of links for each competing business in the current year
-    current_year_edges <- links() %>%
+    # Convert date columns to Date objects
+    links_df <- links() %>%
+      mutate(
+        start_date = as.Date(start_date, format = "%Y-%m-%d"),
+        end_date = as.Date(end_date, format = "%Y-%m-%d")
+      )
+    
+    # Filter the links for the current year
+    current_year_edges <- links_df %>%
       filter((source %in% competing_businesses$id | target %in% competing_businesses$id) & 
                year(start_date) <= year & (is.na(end_date) | year(end_date) >= year))
     
+    # Count the number of links for each competing business in the current year
     current_link_counts <- current_year_edges %>%
       group_by(source) %>%
-      summarise(current_link_count = n()) %>%
+      summarise(current_link_count = n(), .groups = 'drop') %>%
       full_join(current_year_edges %>%
                   group_by(target) %>%
-                  summarise(current_link_count = n()), by = c("source" = "target"), suffix = c("_source", "_target")) %>%
+                  summarise(current_link_count = n(), .groups = 'drop'), 
+                by = c("source" = "target"), suffix = c("_source", "_target")) %>%
       replace_na(list(current_link_count_source = 0, current_link_count_target = 0)) %>%
       mutate(total_current_links = current_link_count_source + current_link_count_target)
     
-    # Count the number of links for each competing business in the previous year
-    previous_year_edges <- links() %>%
+    # Filter the links for the previous year
+    previous_year_edges <- links_df %>%
       filter((source %in% competing_businesses$id | target %in% competing_businesses$id) & 
                year(start_date) <= previous_year & (is.na(end_date) | year(end_date) >= previous_year))
     
+    # Count the number of links for each competing business in the previous year
     previous_link_counts <- previous_year_edges %>%
       group_by(source) %>%
-      summarise(previous_link_count = n()) %>%
+      summarise(previous_link_count = n(), .groups = 'drop') %>%
       full_join(previous_year_edges %>%
                   group_by(target) %>%
-                  summarise(previous_link_count = n()), by = c("source" = "target"), suffix = c("_source", "_target")) %>%
+                  summarise(previous_link_count = n(), .groups = 'drop'), 
+                by = c("source" = "target"), suffix = c("_source", "_target")) %>%
       replace_na(list(previous_link_count_source = 0, previous_link_count_target = 0)) %>%
       mutate(total_previous_links = previous_link_count_source + previous_link_count_target)
     
@@ -47,6 +58,10 @@ aligraphServer <- function(input, output, session, nodes, links) {
     # Determine activity levels based on the difference from the previous year
     competing_businesses <- competing_businesses %>%
       mutate(activity_status = ifelse(total_current_links > total_previous_links, "more_active", "neutral"))
+    
+    # Filter out nodes with no links
+    competing_businesses <- competing_businesses %>%
+      filter(total_current_links > 0)
     
     # Calculate the total number of nodes, active companies, and inactive companies
     total_nodes <- nrow(competing_businesses)
