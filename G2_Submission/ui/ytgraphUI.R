@@ -1,2 +1,5 @@
-# UI for VIP Network
-selectizeInput("selectedVIP", "Select a VIP", choices = NULL, multiple = FALSE, options = list(maxOptions = 1000))
+ytgraphUI <- fluidPage(
+  selectInput("startingAlphabet", "Select Starting Alphabet", 
+              choices = c(LETTERS, "0-9"), selected = "A"),
+  selectizeInput("selectedVIP", "Select a VIP", choices = NULL)
+)
