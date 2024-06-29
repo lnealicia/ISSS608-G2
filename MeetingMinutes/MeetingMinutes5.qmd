@@ -37,7 +37,10 @@ Shiny App started.
 **Shiny App**
 
 -   with reference to [Joy Paas](https://github.com/kjcpaas/ISSS608_Project_Shiny/blob/main/app.R), it was agreed that the Shiny App will be split into modular components for ease of collaborative coding.
--   The Shiny app code will be modularized by splitting it into separate files for the UI and server components for each graph, as well as a common styles file. This approach makes the code more manageable and allows team members to work on different parts independently.
+-   The Shiny app code will be modularized by splitting it into separate files for the UI and server components for each graph, as well as a common styles file. This approach makes the code more manageable and allows team members to work on different parts independently
+-   Keke - Complete visualisation for Typical vs Atypical transactions
+-   YouTing - Finish up the rest of the app
+-   Alicia - Start on user guide
 
 **Deadlines:**
 

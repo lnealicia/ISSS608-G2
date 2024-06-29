@@ -397,6 +397,8 @@ mc3_links_1 <- readRDS("data/rds/mc3_links_1.rds")
 mc3_nodes_1 <- readRDS("data/rds/mc3_nodes_1.rds")
 ```
 
+# Question 1
+
 # Changes in Corporate Structures Over Time
 
 The plot shows how transaction volume changes over time, which helps identify periods of increased or decreased activity
@@ -856,6 +858,8 @@ ggraph(top_graph, layout = "fr") +
 We can see that for the top nodes, they are highly interconnected. To the extent that the graph becomes less interpretable.
 :::
 
+# Question 2
+
 ### Centrality Over Time
 
 Plot Graph
@@ -1304,7 +1308,7 @@ p_plotly <- ggplotly(p, tooltip = "tooltip")
 p_plotly
 ```
 
-## Q3
+# Question 3
 
 By analyzing the ownership structure, we tracked changes in most influential individuals (VIP) networks over time, identifying key individuals with increasing influence.
 
@@ -1657,7 +1661,7 @@ p2015 <- plot(g_vip_filtered_2015, vertex.label = NA, vertex.size = V(g_vip_filt
 
 ```
 
-## Question 4
+# Question 4
 
 For part 1, the focus was on identifying the network associated with SouthSeafood Express Corp and visualizing how this network and competing businesses changed as a result of their illegal fishing behavior.
 
