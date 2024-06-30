@@ -40,6 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -178,7 +180,14 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#welcome-to-our-r-shiny-app" id="toc-welcome-to-our-r-shiny-app" class="nav-link active" data-scroll-target="#welcome-to-our-r-shiny-app">Welcome to our R Shiny App</a></li>
-  <li><a href="#red-herring-hunt-shiny-app-user-guide" id="toc-red-herring-hunt-shiny-app-user-guide" class="nav-link" data-scroll-target="#red-herring-hunt-shiny-app-user-guide">Red Herring Hunt Shiny App User Guide</a></li>
+  <li><a href="#shiny-app-user-guide" id="toc-shiny-app-user-guide" class="nav-link" data-scroll-target="#shiny-app-user-guide">Shiny App User Guide</a>
+  <ul class="collapse">
+  <li><a href="#interface" id="toc-interface" class="nav-link" data-scroll-target="#interface">Interface</a></li>
+  <li><a href="#network-analysis-of-connected-individuals" id="toc-network-analysis-of-connected-individuals" class="nav-link" data-scroll-target="#network-analysis-of-connected-individuals">Network Analysis of Connected Individuals</a></li>
+  <li><a href="#activity-status-of-entities-connected-to-southseafood" id="toc-activity-status-of-entities-connected-to-southseafood" class="nav-link" data-scroll-target="#activity-status-of-entities-connected-to-southseafood">Activity Status of Entities Connected to SouthSeafood</a></li>
+  <li><a href="#network-analysis-of-transactions" id="toc-network-analysis-of-transactions" class="nav-link" data-scroll-target="#network-analysis-of-transactions">Network Analysis of Transactions</a></li>
+  <li><a href="#atypical-transactions" id="toc-atypical-transactions" class="nav-link" data-scroll-target="#atypical-transactions">Atypical Transactions</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -223,10 +232,114 @@ ul.task-list li input[type="checkbox"] {
 <p>The Shiny App can be accessed on Shiny.io <a href="https://ytquek.shinyapps.io/G2_Submission/">here</a>.</p>
 <p>You can find the user guide below.</p>
 </section>
-<section id="red-herring-hunt-shiny-app-user-guide" class="level1">
-<h1>Red Herring Hunt Shiny App User Guide</h1>
+<section id="shiny-app-user-guide" class="level1">
+<h1>Shiny App User Guide</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Due to the amount of data being loaded, the app may take a few minutes to load the first time it is being accessed.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To download any graph of interest, right click on the graph to reveal the “Save Image as” or “Copy Image” dropdown.</p>
+</div>
+</div>
+<section id="interface" class="level2">
+<h2 class="anchored" data-anchor-id="interface">Interface</h2>
+<p>The app is made up of 2 panels.</p>
+<p><img src="images/clipboard-4239530212.png" class="img-fluid"></p>
+<p>On the left is the options panel where various options can be selected to interact with available data for visualisation. In this panel, you will find either a drop down list or a slider for you to make your preferred selection.</p>
+<p><img src="images/clipboard-3332425215.png" class="img-fluid"></p>
+<p>On the right is the visualisation panel with 4 tabs for data exploration. Visualisations are also plotted here.</p>
+<ul>
+<li><p>Network analysis of connected individuals</p></li>
+<li><p>Activity status of entities connected to SouthSeafood</p></li>
+<li><p>Network analysis of transactions</p></li>
+<li><p>Atypical Transactions</p></li>
+</ul>
+<p><img src="images/clipboard-1380732157.png" class="img-fluid"></p>
+</section>
+<section id="network-analysis-of-connected-individuals" class="level2">
+<h2 class="anchored" data-anchor-id="network-analysis-of-connected-individuals">Network Analysis of Connected Individuals</h2>
+<p>This page shows the nodes of interest, the nodes that they are linked to, as well as the centrality between the nodes. Arrows are also shown in order to more clearly define the relationship.</p>
+<ol type="1">
+<li>To select a starting node (highlighted in red), first select corresponding starting alphabet of the node in the “Select Starting Alphabet” drop down.</li>
+<li>Then, select the node’s name under “Select a VIP”. The network plot will be shown.</li>
+<li>To more clearly a related node and its centrality value, you can select the relevant node of interest that is linked to the VIP (highlighted in red).</li>
+</ol>
+<p>Below is an example showing Dalton Inc.&nbsp;as the node of interest, and their relationship with Robert Whitehead is being selected.</p>
+<p><img src="images/clipboard-3252321816.png" class="img-fluid"></p>
+</section>
+<section id="activity-status-of-entities-connected-to-southseafood" class="level2">
+<h2 class="anchored" data-anchor-id="activity-status-of-entities-connected-to-southseafood">Activity Status of Entities Connected to SouthSeafood</h2>
+<p>This page shows the network of companies in Oceanus.</p>
+<p>Above the plot, the following information is shown:</p>
+<ul>
+<li><p>Total number of active companies (highlighted in green in the plot)</p></li>
+<li><p>Total number of inactive companies (highlighted in grey in the plot)</p></li>
+<li><p>Total number of companies with links to SouthSeafood Express Corp</p></li>
+</ul>
+<p><img src="images/clipboard-4112107801.png" class="img-fluid"></p>
+<p>The network plot has the following functions:</p>
+<ul>
+<li><p>Zoom (use mouse scroll)</p></li>
+<li><p>Pan (click and drag to navigate around the plot)</p></li>
+<li><p>Tooltip (hover using mouse)</p>
+<ul>
+<li>Shows name of node and number of links the node has</li>
+</ul></li>
+<li><p>Highlight (left click using mouse)</p></li>
+</ul>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="images/video.mp4"></video></div>
+</section>
+<section id="network-analysis-of-transactions" class="level2">
+<h2 class="anchored" data-anchor-id="network-analysis-of-transactions">Network Analysis of Transactions</h2>
+<p>This page shows the directed network graph of key personnel transactions. The slider on the left is used to select the relevant years of interest. Each node (blue) represents unique companies, and each directed link is marked with the year the transaction occurred.</p>
+<p><img src="images/clipboard-4023191738.png" class="img-fluid"></p>
+</section>
+<section id="atypical-transactions" class="level2">
+<h2 class="anchored" data-anchor-id="atypical-transactions">Atypical Transactions</h2>
+<p>In this page, transactions highlighted as atypical are visualised. Due to the volumne of transactions, only the top 50 are shown.</p>
+<p>The start page shows all entities with all their relationships. The lager nodes indicate entities with higher centrality i.e.&nbsp;crucial to connecting different parts of the network. The distance between each node is also determined by their relevant centrality.</p>
+<p><img src="images/clipboard-115885439.png" class="img-fluid"></p>
+<p>Using the drop down, you can specify the entity of interest (highlighted in pink), along with the type of relationship you want to hone in on:</p>
+<ul>
+<li><p>Shareholder</p></li>
+<li><p>Works for (Employee)</p></li>
+<li><p>Beneficial Ownership</p></li>
+</ul>
+<p><img src="images/clipboard-1288169072.png" class="img-fluid"></p>
+<p>The options panel also offers more information concerning the plot:</p>
+<ul>
+<li><p>Entity of interest being plotted</p></li>
+<li><p>Relationship type being plotted</p></li>
+<li><p>Explanation of node size</p></li>
+<li><p>Definition of betweenness centrality</p></li>
+<li><p>Definition of closeness centrality</p></li>
+</ul>
+<p><img src="images/clipboard-2723092125.png" class="img-fluid"></p>
+<p>To further interact with the centrality plot, hover over the top right hand corner to reveal plotly functions. Hovering over nodes will also reveal their ID and centrality scores.</p>
+<p><img src="images/clipboard-903697312.png" class="img-fluid"></p>
+<p>Thank you for using our app! We hope you had an enjoyable experience!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -640,6 +753,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
