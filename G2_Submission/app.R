@@ -30,26 +30,26 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       conditionalPanel(
-        condition = "input.tabs == 'VIP Network'",
+        condition = "input.tabs == 'Network analysis of connected individuals'",
         ytgraphUI
       ),
       conditionalPanel(
-        condition = "input.tabs == 'Beneficiaries of SouthSeafood Express Corp'",
+        condition = "input.tabs == 'Activity status of entities connected to SouthSeafood'",
         aligraphUI
       ),
       conditionalPanel(
-        condition = "input.tabs == 'Directed Graph'",
+        condition = "input.tabs == 'Network analysis of transactions'",
         network_ui("directedGraph")  # Use network_ui for Directed Graph tab
       )
     ),
     mainPanel(
       tabsetPanel(id = "tabs",
-                  tabPanel("VIP Network", visNetworkOutput("networkPlot")),
-                  tabPanel("Beneficiaries of SouthSeafood Express Corp", 
+                  tabPanel("Network analysis of connected individuals", visNetworkOutput("networkPlot")),
+                  tabPanel("Activity status of entities connected to SouthSeafood", 
                            textOutput("summaryText"),
                            visNetworkOutput("competingNetwork")
                   ),
-                  tabPanel("Directed Graph", 
+                  tabPanel("Network analysis of transactions", 
                            plotOutput("directedGraph-graphPlot")  # Reference plot output for directed graph
                   )
       )
