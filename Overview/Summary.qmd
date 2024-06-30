@@ -61,7 +61,7 @@ To focus on the most relevant period, we filter the data to only keep transactio
 
 Another way to observe changes in corporate structures over time is to visualize the changes in the most active people and businesses. By identifying and tracking these key entities, we can gain insights into how their influence and activities shape the overall corporate structure during different periods. This method complements the transaction volume analysis, providing a more comprehensive view of temporal patterns and structural changes.
 
-## Q1 visualization - no shiny needed. poster? my opinion is no need to show, as the x axis (year) is different - only show findings in poster
+## Q1 visualization 
 
 ![Fig 1](images/clipboard-42192613.png)
 
@@ -89,7 +89,7 @@ By applying the centrality threshold, we identified the top 50 suspicious nodes.
 
 Through this method, we can highlight nodes that warrant further investigation and provide insights into the underlying motivations for changes in activity. This analysis helps us identify patterns of influence and ownership that deviate from typical business transactions, thereby uncovering potentially illicit activities within the corporate network.
 
-## Q2 visualization -1st shiny. poster: show below fig3 and name a few transaction examples as finding
+## Q2 visualization 
 
 ![Fig3](images/clipboard-3534659476.png)
 
@@ -154,7 +154,7 @@ Given the significant gap between the top 2 groups and the 3rd, we identified th
 
 Finally, we filtered the ownership connections to include only those involving these 22 influential individuals (VIPs). By focusing on these connections, we can track how the influence of these key individuals changes over time and how their networks
 
-## Q3 visualization (2nd shiny: can do plotly and show all 4 years / all years in 1 plot? poster: show 4 plots)
+## Q3 visualization 
 
 Given the significant increase in data from 2004 onwards, focusing on every 10 years from 2005 to 2035 would provide a more detailed analysis of changes in ownership and influence.
 
@@ -176,7 +176,7 @@ To visualize and analyze the network associated with SouthSeafood Express Corp a
 
 First, we extracted all nodes and edges linked to SouthSeafood Express Corp and classified all other fishing companies as competitors, with the remaining entities labeled as non-competitors. Then, we identified significant changes of *start_date & end_date* in connections and network structure resulting from SouthSeafood's illegal activities and closure. This analysis revealed shifts in influence, with some companies gaining and others losing power, highlighting patterns of power consolidation.
 
-## Q4 visualization(3rd shiny, poster: show 2)
+## Q4 visualization
 
 ![](images/clipboard-2081906262.png)
 
@@ -190,8 +190,10 @@ After the incident, the number of blue nodes (fishing companies) decreased signi
 
 The results show that the top beneficiaries, all classified as fishing companies, significantly increased their network centrality following SouthSeafood Express Corp’s legal troubles. Anderson-Roberts, Hall, Hartman and Hall, and Kirk Inc., among others, saw the largest gains, suggesting they capitalized on the shift in the network’s structure.
 
-# Conclusion - list out top 3? overlapping nodes as conclusion - shall be monitored closely in future work
+# Conclusion 
 
-find out all the overlap nodes from Q1-4
+After comparing all the findings from the above four tasks, Susan Torres and the entity "Torres, Ross and Brown" and Cynthia Anderson and the entity Anderson-Roberts are our future key focus subjects because they are involved in atypical transactions, are influential in the network, and are beneficiaries of the SouthSeafood incident. We should closely monitor the future activities of these entities to prevent new illegal fishing activities from emerging.
 
 # Future Work
+
+Comparative Analysis of Regional Markets. We can compare the dynamics of VIP connections and market structures across different geographical regions. By identifying common patterns and regional-specific dynamics, we can enhance future analytics and enforcement strategies.
