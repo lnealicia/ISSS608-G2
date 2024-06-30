@@ -53,25 +53,25 @@ flowchart LR
 
 # Analysis
 
-## Q1 methodology
+## Q1 Methodology
 
-the lack of time-series data for each node making it difficult to directly compare changes in corporate structures for the same company over time. Therefore, we simplify our approach by assuming that a company's structure is proportional to its transaction volume. By grouping transaction data by start date and counting the number of transactions for each period, we can illustrate changes in corporate structures over time. This method allows us to visualize temporal patterns and infer structural changes based on transaction activity.
+The lack of time-series data for each node making it difficult to directly compare changes in corporate structures for the same company over time. Therefore, we simplify our approach by assuming that a company's structure is proportional to its transaction volume. By grouping transaction data by start date and counting the number of transactions for each period, we can illustrate changes in corporate structures over time. This method allows us to visualize temporal patterns and infer structural changes based on transaction activity.
 
 To focus on the most relevant period, we filter the data to only keep transactions from 2000 (five years before 2005) to 2035 (the end of the dataset). This allows us to capture recent changes to entities while excluding older, less relevant data.
 
 Another way to observe changes in corporate structures over time is to visualize the changes in the most active people and businesses. By identifying and tracking these key entities, we can gain insights into how their influence and activities shape the overall corporate structure during different periods. This method complements the transaction volume analysis, providing a more comprehensive view of temporal patterns and structural changes.
 
-## Q1 visualization 
+## Q1 Visualization 
 
 ![Fig 1](images/clipboard-42192613.png)
 
 ![Fig 2](images/clipboard-4104929934.png)
 
-## Q1 key findings
+## Q1 Key findings
 
 In Figure 1, we observe that the rapid growth in transactions began around 2005, peaking in 2034, followed by a sharp decline in 2035. Figure 2 further illustrates these trends by showing fluctuations in the number of active companies over time. Despite these fluctuations, there is a general upward trend in the number of active companies, particularly from 2010 onwards, where the numbers reach their highest values in the dataset. This pattern mirrors the transaction volume trends observed in Figure 1. Additionally, we notice a dip in the number of active companies around 2035, followed by an increase. This suggests that a significant event may have occurred around 2035, leading to market restructuring.
 
-## Q2 methodology
+## Q2 Methodology
 
 To address the task of identifying and displaying examples of typical and atypical business transactions, we focused on nodes and edges that signify ownership and employment relationships.
 
@@ -89,15 +89,15 @@ By applying the centrality threshold, we identified the top 50 suspicious nodes.
 
 Through this method, we can highlight nodes that warrant further investigation and provide insights into the underlying motivations for changes in activity. This analysis helps us identify patterns of influence and ownership that deviate from typical business transactions, thereby uncovering potentially illicit activities within the corporate network.
 
-## Q2 visualization 
+## Q2 Visualization 
 
 ![Fig3](images/clipboard-3534659476.png)
 
-## Q2 key findings
+## Q2 Key findings
 
 **Youting: can you extract all the 50 transactions list? so that i can put here**
 
-## Q3 methodology
+## Q3 Methodology
 
 To address the question of examining how the influence of a company changes over time and identifying ownership or influence within a network, we focused on tracking changes in the most influential individuals (VIPs) and their networks. Here is a summary of our approach:
 
@@ -154,7 +154,7 @@ Given the significant gap between the top 2 groups and the 3rd, we identified th
 
 Finally, we filtered the ownership connections to include only those involving these 22 influential individuals (VIPs). By focusing on these connections, we can track how the influence of these key individuals changes over time and how their networks
 
-## Q3 visualization 
+## Q3 Visualization 
 
 Given the significant increase in data from 2004 onwards, focusing on every 10 years from 2005 to 2035 would provide a more detailed analysis of changes in ownership and influence.
 
@@ -166,23 +166,23 @@ Given the significant increase in data from 2004 onwards, focusing on every 10 y
 
 ![Fig 7](images/clipboard-1249221300.png)
 
-## Q3 key findings
+## Q3 Key findings
 
 In 2005, the network is sparse with moderate VIP connections, indicating balanced influence. By 2015, the network is denser, showing increased influence and control among VIPs. In 2025, the network's complexity peaks, with VIPs owning shares in many companies, indicating heightened market control. By 2035, the network forms a star-like structure, with a central VIP gaining substantial influence and direct connections to numerous companies. This significant power consolidation may be linked to the SouthSeafood incident, triggering the restructuring and concentration of influence.
 
-## Q4 methodology
+## Q4 Methodology
 
 To visualize and analyze the network associated with SouthSeafood Express Corp and its changes due to illegal fishing behavior,
 
 First, we extracted all nodes and edges linked to SouthSeafood Express Corp and classified all other fishing companies as competitors, with the remaining entities labeled as non-competitors. Then, we identified significant changes of *start_date & end_date* in connections and network structure resulting from SouthSeafood's illegal activities and closure. This analysis revealed shifts in influence, with some companies gaining and others losing power, highlighting patterns of power consolidation.
 
-## Q4 visualization
+## Q4 Visualization
 
 ![](images/clipboard-2081906262.png)
 
 ![](images/clipboard-3791434694.png)
 
-## Q4 key findings
+## Q4 Key findings
 
 After the incident, the number of blue nodes (fishing companies) decreased significantly, and yellow nodes (non-competitors) also decreased slightly. Despite the reduction in nodes, the network has become denser, indicating increased interconnectedness among the remaining entities.
 
