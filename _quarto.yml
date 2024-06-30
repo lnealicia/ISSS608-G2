@@ -2,6 +2,7 @@ project:
   type: website
 
 website:
+  favicon: images/logofish.png
   title: "ISSS608"
   navbar:
     left: 
@@ -12,7 +13,7 @@ website:
             href: "Overview/Proposal.html"
           - text: "Summary"
             href: "Overview/Summary.html"
-      - icon: person
+      - icon: file-person
       - text: "Task"
         menu:
           - text: "Task Information"

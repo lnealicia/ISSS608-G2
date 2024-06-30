@@ -1,5 +1,5 @@
 ---
-title: "Meeting Minutes 1"
+title: "Meeting Minutes 2"
 author: "Group 2"
 date: "June 11, 2024"
 date-modified: last-modified
@@ -9,8 +9,6 @@ execute:
   warning: false
   freeze: true
 ---
-
-# Meeting Minutes 2
 
 Date: 11 June 2024
 

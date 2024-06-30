@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About the Team"
 date: "20 May 2024"
 date-modified: "last-modified"
 ---

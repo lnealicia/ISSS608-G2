@@ -10,8 +10,6 @@ execute:
   freeze: true
 ---
 
-# Meeting Minutes 3
-
 Date: 18 June 2024
 
 Attendance: All present
