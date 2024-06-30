@@ -95,7 +95,13 @@ Through this method, we can highlight nodes that warrant further investigation a
 
 ## Q2 Key findings
 
-**Youting: can you extract all the 50 transactions list? so that i can put here**
+Business transactions are classified as atypical if:
+
+-   Unusual Transactions (e.g., sudden changes in ownership, unusual shareholder activity).
+
+-   Use clustering algorithms to group similar transactions amongst groups of people.
+
+The above graph effectively highlights key players in atypical business transactions through centrality measures. Entities like Baxter-Turner, Kim Ellis, Theresa Frank, Henderson Group, and Rodriguez, Smith and Murray are central to the network, either due to their strategic positions (high betweenness centrality) or their connectivity (high closeness centrality). This visualization can help identify crucial nodes for further analysis or strategic planning in business networks.
 
 ## Q3 Methodology
 
