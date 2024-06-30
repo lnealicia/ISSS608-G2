@@ -1,0 +1,12 @@
+name: G2_Submission
+title: G2_Submission
+username: ytquek
+account: ytquek
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12254755
+bundleId: 8806420
+url: https://ytquek.shinyapps.io/G2_Submission/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
